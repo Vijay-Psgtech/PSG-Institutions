@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <div className="text-2xl text-blue-900 font-extrabold">
-        PSG Institutions
-      </div>
+      <Routes>
+          <Route path="" element={<div>PSG Institutions</div>} />
+      </Routes>
     </>
   );
 }
