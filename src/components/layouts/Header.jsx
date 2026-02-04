@@ -1,43 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const closeTimeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
   }, []);
 
   const menuItems = [
-    { name: 'Home', link: '#home' },
+    { name: "Home", link: "#home" },
     {
-      name: 'About',
-      link: '#about',
+      name: "About",
+      link: "#about",
       subItems: [
-        { name: 'Our History', link: '#history' },
-        { name: 'Vision & Mission', link: '#vision' }
-      ]
+        { name: "Our History", link: "#history" },
+        { name: "Vision & Mission", link: "#vision" },
+      ],
     },
     {
-      name: 'Institutions',
-      link: '#institutions',
+      name: "Institutions",
+      link: "#institutions",
       subItems: [
-        { name: 'Engineering Colleges', link: '#engineering' },
-        { name: 'Arts & Science', link: '#arts-science' },
-        { name: 'Polytechnic', link: '#polytechnic' }
-      ]
+        { name: "PSG Sarvajana High School", link: "#psgshs" },
+        { name: "PSG Primary School, Vedapatti", link: "psgps1" },
+        { name: "PSG Primary School, Peelamedu", link: "#psgps2" },
+        { name: "PSG High School, Vedapatti", link: "#psgps2" },
+        { name: "PSG Public Schools", link: "#psgps2" },
+        { name: "PSG College of Arts & Sciences", link: "#psgps2" },
+        { name: "PSG College of Technology", link: "#psgps2" },
+        { name: "PSG Institute of Management", link: "#psgps2" },
+        { name: "PSG Institute of Advanced Studies", link: "#psgps2" },
+        {
+          name: "PSG Institute of Technology & Applied Research",
+          link: "#psgps2",
+        },
+        { name: "PSG Institute of Architecture & Planning", link: "#psgps2" },
+        { name: "PSG Polytechnic College", link: "#psgps2" },
+      ],
     },
-    { name: 'Events', link: '#events' },
-    { name: 'Achievements', link: '#achievements' },
-    { name: 'Placements', link: '#placements' },
-    { name: 'Contact', link: '#contact' }
+    { name: "Events", link: "#events" },
+    { name: "Achievements", link: "#achievements" },
+    { name: "Placements", link: "#placements" },
+    { name: "Contact", link: "#contact" },
   ];
 
   const toggleDropdown = (index) => {
@@ -50,17 +71,24 @@ const Header = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-      isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.12)]' : 'shadow-[0_2px_10px_rgba(0,0,0,0.08)]'
-    }`}>
+    <header
+      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
+        isScrolled
+          ? "shadow-[0_4px_20px_rgba(0,0,0,0.12)]"
+          : "shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4 md:py-5 relative">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
+          <a
+            href="#home"
+            className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
+          >
             {/* Logo Image */}
-            <img 
-              src="/logo.png" 
-              alt="PSG Institutions Logo" 
+            <img
+              src="/logo.png"
+              alt="PSG Institutions Logo"
               className="h-12 md:h-14 lg:h-16 w-auto object-contain"
             />
             {/* Logo Text */}
@@ -81,8 +109,23 @@ const Header = () => {
                 <li
                   key={index}
                   className="relative group"
-                  onMouseEnter={() => item.subItems && setActiveDropdown(index)}
-                  onMouseLeave={() => item.subItems && setActiveDropdown(null)}
+                  onMouseEnter={() => {
+                    if (item.subItems) {
+                      if (closeTimeoutRef.current) {
+                        clearTimeout(closeTimeoutRef.current);
+                        closeTimeoutRef.current = null;
+                      }
+                      setActiveDropdown(index);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (item.subItems) {
+                      closeTimeoutRef.current = setTimeout(() => {
+                        setActiveDropdown(null);
+                        closeTimeoutRef.current = null;
+                      }, 150);
+                    }
+                  }}
                 >
                   <a
                     href={item.link}
@@ -90,23 +133,35 @@ const Header = () => {
                   >
                     {item.name}
                     {item.subItems && (
-                      <ChevronDown 
-                        size={16} 
-                        className={`transition-transform duration-300 ${
-                          activeDropdown === index ? 'rotate-180' : ''
-                        }`}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-500 ${activeDropdown === index ? "rotate-180" : ""}`}
                       />
                     )}
                     <span className="absolute bottom-1.5 left-4 right-4 h-0.5 bg-[#0052ab] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                   </a>
-                  
-                  {/* Dropdown Menu */}
+
                   {item.subItems && (
-                    <ul className={`absolute top-full left-0 mt-2 min-w-[220px] bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 transition-all duration-300 ${
-                      activeDropdown === index 
-                        ? 'opacity-100 visible translate-y-0' 
-                        : 'opacity-0 invisible -translate-y-2 pointer-events-none'
-                    }`}>
+                    <ul
+                      onMouseEnter={() => {
+                        if (closeTimeoutRef.current) {
+                          clearTimeout(closeTimeoutRef.current);
+                          closeTimeoutRef.current = null;
+                        }
+                        setActiveDropdown(index);
+                      }}
+                      onMouseLeave={() => {
+                        closeTimeoutRef.current = setTimeout(() => {
+                          setActiveDropdown(null);
+                          closeTimeoutRef.current = null;
+                        }, 150);
+                      }}
+                      className={`absolute top-full left-0 mt-1 z-50 min-w-[220px] bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 w-80 transition-all duration-300 ${
+                        activeDropdown === index
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                      }`}
+                    >
                       {item.subItems.map((subItem, subIndex) => (
                         <li key={subIndex}>
                           <a
@@ -137,17 +192,26 @@ const Header = () => {
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} className="text-[#003d82]" /> : <Menu size={24} className="text-[#003d82]" />}
+            {isMobileMenuOpen ? (
+              <X size={24} className="text-[#003d82]" />
+            ) : (
+              <Menu size={24} className="text-[#003d82]" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        <nav className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isMobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        <nav
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+            isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
           <ul className="py-4 space-y-1">
             {menuItems.map((item, index) => (
-              <li key={index} className="border-b border-gray-100 last:border-b-0">
+              <li
+                key={index}
+                className="border-b border-gray-100 last:border-b-0"
+              >
                 <div className="flex justify-between items-center">
                   <a
                     href={item.link}
@@ -162,21 +226,23 @@ const Header = () => {
                       className="p-3.5 text-gray-600 hover:text-[#0052ab] transition-colors duration-300"
                       aria-label={`Toggle ${item.name} submenu`}
                     >
-                      <ChevronDown 
-                        size={18} 
+                      <ChevronDown
+                        size={18}
                         className={`transition-transform duration-300 ${
-                          activeDropdown === index ? 'rotate-180' : ''
+                          activeDropdown === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                   )}
                 </div>
-                
+
                 {/* Mobile Dropdown */}
                 {item.subItems && (
-                  <ul className={`overflow-hidden transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${
-                    activeDropdown === index ? 'max-h-72' : 'max-h-0'
-                  }`}>
+                  <ul
+                    className={`overflow-hidden transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${
+                      activeDropdown === index ? "max-h-72" : "max-h-0"
+                    }`}
+                  >
                     {item.subItems.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <a
@@ -194,7 +260,7 @@ const Header = () => {
             ))}
             {/* Mobile CTA */}
             <li className="pt-4">
-              <button 
+              <button
                 onClick={toggleMobileMenu}
                 className="w-full bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white py-3.5 rounded-full font-semibold text-sm uppercase tracking-wider shadow-lg"
               >
