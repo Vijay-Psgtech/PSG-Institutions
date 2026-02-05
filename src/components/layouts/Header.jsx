@@ -38,21 +38,40 @@ const Header = () => {
       name: "Institutions",
       link: "#institutions",
       subItems: [
-        { name: "PSG Sarvajana High School", link: "#psgshs" },
-        { name: "PSG Primary School, Vedapatti", link: "psgps1" },
-        { name: "PSG Primary School, Peelamedu", link: "#psgps2" },
-        { name: "PSG High School, Vedapatti", link: "#psgps2" },
-        { name: "PSG Public Schools", link: "#psgps2" },
-        { name: "PSG College of Arts & Sciences", link: "#psgps2" },
-        { name: "PSG College of Technology", link: "#psgps2" },
-        { name: "PSG Institute of Management", link: "#psgps2" },
-        { name: "PSG Institute of Advanced Studies", link: "#psgps2" },
         {
-          name: "PSG Institute of Technology & Applied Research",
-          link: "#psgps2",
+          groupName: "Schools",
+          items: [
+            { name: "PSG Sarvajana High School", link: "*" },
+            { name: "PSG Primary School, Vedapatti", link: "*" },
+            { name: "PSG Primary School, Peelamedu", link: "*" },
+            { name: "PSG High School, Vedapatti", link: "*" },
+            { name: "PSG Public Schools", link: "*" },
+          ],
         },
-        { name: "PSG Institute of Architecture & Planning", link: "#psgps2" },
-        { name: "PSG Polytechnic College", link: "#psgps2" },
+        {
+          groupName: "Colleges & Institutes",
+          items: [
+            { name: "PSG College of Arts & Sciences", link: "*" },
+            { name: "PSG College of Technology", link: "*" },
+            { name: "PSG Institute of Management", link: "*" },
+            { name: "PSG Institute of Advanced Studies", link: "*" },
+            {
+              name: "PSG Institute of Technology & Applied Research",
+              link: "*",
+            },
+            { name: "PSG Institute of Architecture & Planning", link: "*" },
+            { name: "PSG Polytechnic College", link: "*" },
+          ],
+        },
+        {
+          groupName: "Medical & Healthcare",
+          items: [
+            { name: "PSG Institute of Medical Sciences & Research", link: "*" },
+            { name: "PSG College of Nursing", link: "*" },
+            { name: "PSG College of Physiotherapy", link: "*" },
+            { name: "PSG College of Pharmacy", link: "*" },
+          ],
+        },
       ],
     },
     { name: "Events", link: "#events" },
@@ -96,7 +115,7 @@ const Header = () => {
               <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#003d82] to-[#0052ab] bg-clip-text text-transparent leading-none tracking-tight">
                 PSG
               </span>
-              <span className="text-[9px] md:text-[10px] lg:text-[11px] text-gray-600 uppercase tracking-[2px] mt-0.5">
+              <span className="text-[9px] md:text-[10px] lg:text-[15px] text-gray-600 uppercase tracking-[2px] mt-0.5">
                 Institutions
               </span>
             </div>
@@ -142,7 +161,7 @@ const Header = () => {
                   </a>
 
                   {item.subItems && (
-                    <ul
+                    <div
                       onMouseEnter={() => {
                         if (closeTimeoutRef.current) {
                           clearTimeout(closeTimeoutRef.current);
@@ -156,23 +175,51 @@ const Header = () => {
                           closeTimeoutRef.current = null;
                         }, 150);
                       }}
-                      className={`absolute top-full left-0 mt-1 z-50 min-w-[220px] bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 w-80 transition-all duration-300 ${
+                      className={`absolute top-full left-0 mt-1 z-50 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 ${item.name === "Institutions" ? "w-180" : "w-50"} transition-all duration-300 ${
                         activeDropdown === index
                           ? "opacity-100 visible translate-y-0"
                           : "opacity-0 invisible -translate-y-2 pointer-events-none"
                       }`}
                     >
-                      {item.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <a
-                            href={subItem.link}
-                            className="block px-5 py-3 text-gray-700 text-sm border-l-3 border-transparent hover:bg-[#0052ab]/5 hover:text-[#0052ab] hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
-                          >
-                            {subItem.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                      {Array.isArray(item.subItems) &&
+                      item.subItems[0] &&
+                      item.subItems[0].items ? (
+                        <div className="grid grid-cols-3 gap-4 p-4">
+                          {item.subItems.map((group, gi) => (
+                            <div key={gi} className="min-w-[160px]">
+                              <h4 className="px-2 py-1 text-sm font-semibold text-gray-800">
+                                {group.groupName}
+                              </h4>
+                              <ul>
+                                {group.items.map((s, si) => (
+                                  <li key={si}>
+                                    <a
+                                      href={s.link}
+                                      className="block px-2 py-2 text-gray-700 text-sm hover:bg-[#0052ab]/5 hover:text-[#0052ab] rounded transition"
+                                    >
+                                      {s.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <ul>
+                          {item.subItems.map((subItem, subIndex) => (
+                            <li key={subIndex}>
+                              <a
+                                href={subItem.link}
+                                className="block px-5 py-3 text-gray-700 text-sm border-l-3 border-transparent hover:bg-[#0052ab]/5 hover:text-[#0052ab] hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
+                              >
+                                {subItem.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   )}
                 </li>
               ))}
@@ -243,17 +290,40 @@ const Header = () => {
                       activeDropdown === index ? "max-h-72" : "max-h-0"
                     }`}
                   >
-                    {item.subItems.map((subItem, subIndex) => (
-                      <li key={subIndex}>
-                        <a
-                          href={subItem.link}
-                          onClick={toggleMobileMenu}
-                          className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
-                        >
-                          {subItem.name}
-                        </a>
-                      </li>
-                    ))}
+                    {Array.isArray(item.subItems) &&
+                    item.subItems[0] &&
+                    item.subItems[0].items
+                      ? item.subItems.map((group, gi) => (
+                          <li key={gi} className="py-1">
+                            <div className="px-5 py-2 text-sm font-semibold text-gray-800">
+                              {group.groupName}
+                            </div>
+                            <ul>
+                              {group.items.map((s, si) => (
+                                <li key={si}>
+                                  <a
+                                    href={s.link}
+                                    onClick={toggleMobileMenu}
+                                    className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
+                                  >
+                                    {s.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </li>
+                        ))
+                      : item.subItems.map((subItem, subIndex) => (
+                          <li key={subIndex}>
+                            <a
+                              href={subItem.link}
+                              onClick={toggleMobileMenu}
+                              className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
+                            >
+                              {subItem.name}
+                            </a>
+                          </li>
+                        ))}
                   </ul>
                 )}
               </li>

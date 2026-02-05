@@ -41,7 +41,7 @@ const AboutSection = () => {
           >
             {/* Decorative Border */}
             <div className="absolute -inset-4 bg-gradient-to-br from-[#003d82] via-[#0052ab] to-blue-600 rounded-3xl opacity-10 blur-xl"></div>
-            
+
             {/* Main Image Container */}
             <motion.div
               className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,61,130,0.3)] ring-1 ring-gray-900/5"
@@ -72,7 +72,9 @@ const AboutSection = () => {
             >
               <div className="text-center">
                 <p className="text-3xl font-extrabold text-[#003d82]">100</p>
-                <p className="text-xs font-medium text-gray-600 mt-1">Years of Legacy</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">
+                  Years of Legacy
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -93,31 +95,52 @@ const AboutSection = () => {
                   Excellence & Service
                 </span>
               </h3>
-              
+
               <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-light">
-                Established in <span className="font-semibold text-[#003d82]">1926</span> as 
-                <span className="font-semibold"> PSG & Sons' Charities</span> by the four visionary sons of 
-                P.S. Govindasamy Naidu.
+                Established in{" "}
+                <span className="font-semibold text-[#003d82]">1926</span> as
+                <span className="font-semibold"> PSG & Sons' Charities</span> by
+                the four visionary sons of P.S. Govindasamy Naidu.
               </p>
             </div>
 
             {/* Main Description */}
             <div className="space-y-5">
               <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
-                The founders — <span className="font-medium text-gray-800">Venkataswamy Naidu, Rangaswamy Naidu, Ganga Naidu,</span> and{" "}
-                <span className="font-medium text-gray-800">Narayanaswamy Naidu</span> — established this trust with a noble purpose: 
-                creating a <span className="italic">sarvajana school</span> accessible to all, after facing denial from British-run institutions.
+                The founders —{" "}
+                <span className="font-medium text-gray-800">
+                  Venkataswamy Naidu, Rangaswamy Naidu, Ganga Naidu,
+                </span>{" "}
+                and{" "}
+                <span className="font-medium text-gray-800">
+                  Narayanaswamy Naidu
+                </span>{" "}
+                — established this trust with a noble purpose: creating a{" "}
+                <span className="italic">sarvajana school</span> accessible to
+                all, after facing denial from British-run institutions.
               </p>
 
               <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
-                In an extraordinary act of philanthropy, the four brothers voluntarily divided their ancestral properties into five parts, 
-                reserving one-fifth (amounting to <span className="font-semibold text-[#003d82]">₹2.01 lakhs</span>) to create this charitable trust.
+                In an extraordinary act of philanthropy, the four brothers
+                voluntarily divided their ancestral properties into five parts,
+                reserving one-fifth (amounting to{" "}
+                <span className="font-semibold text-[#003d82]">
+                  ₹2.01 lakhs
+                </span>
+                ) to create this charitable trust.
               </p>
 
               <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
-                From these humble yet determined beginnings, the trust has grown to establish a diverse array of{" "}
-                <span className="font-semibold text-gray-800">educational institutions, healthcare facilities,</span> and{" "}
-                <span className="font-semibold text-gray-800">industrial institutes</span>, touching countless lives across generations.
+                From these humble yet determined beginnings, the trust has grown
+                to establish a diverse array of{" "}
+                <span className="font-semibold text-gray-800">
+                  educational institutions, healthcare facilities,
+                </span>{" "}
+                and{" "}
+                <span className="font-semibold text-gray-800">
+                  industrial institutes
+                </span>
+                , touching countless lives across generations.
               </p>
             </div>
 
@@ -125,29 +148,50 @@ const AboutSection = () => {
             <div className="grid sm:grid-cols-3 gap-4 pt-6">
               <motion.div
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100/50"
-                whileHover={{ y: -4, boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)" }}
+                whileHover={{
+                  y: -4,
+                  boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)",
+                }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">4</p>
-                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">Visionary Founders</p>
+                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">
+                  4
+                </p>
+                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">
+                  Visionary Founders
+                </p>
               </motion.div>
 
               <motion.div
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100/50"
-                whileHover={{ y: -4, boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)" }}
+                whileHover={{
+                  y: -4,
+                  boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)",
+                }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">1926</p>
-                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">Year Established</p>
+                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">
+                  1926
+                </p>
+                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">
+                  Year Established
+                </p>
               </motion.div>
 
               <motion.div
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100/50"
-                whileHover={{ y: -4, boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)" }}
+                whileHover={{
+                  y: -4,
+                  boxShadow: "0 20px 40px -15px rgba(0,61,130,0.2)",
+                }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">₹2.01L</p>
-                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">Initial Endowment</p>
+                <p className="text-2xl md:text-3xl font-bold text-[#003d82]">
+                  ₹2.01L
+                </p>
+                <p className="text-xs md:text-sm text-gray-600 mt-1 font-medium">
+                  Initial Endowment
+                </p>
               </motion.div>
             </div>
 
@@ -160,14 +204,25 @@ const AboutSection = () => {
                 transition={{ duration: 0.2 }}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-[#0052ab] to-[#003d82] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="relative">Explore Our History</span>
-                <svg 
-                  className="relative w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
+                <a
+                  href="https://www.psgsonscharities.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="relative">Explore Our History</span>
+                </a>
+                <svg
+                  className="relative w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </motion.button>
             </div>

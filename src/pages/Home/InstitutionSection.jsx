@@ -20,7 +20,7 @@ const InstitutionsSection = () => {
       schools: institutions.filter(
         (inst) =>
           inst.label.toLowerCase().includes("school") ||
-          inst.label.toLowerCase().includes("primary")
+          inst.label.toLowerCase().includes("primary"),
       ),
       colleges: institutions.filter(
         (inst) =>
@@ -30,14 +30,14 @@ const InstitutionsSection = () => {
             !inst.label.toLowerCase().includes("nursing") &&
             !inst.label.toLowerCase().includes("physio") &&
             !inst.label.toLowerCase().includes("pharmacy")) ||
-          inst.label.toLowerCase().includes("polytechnic")
+          inst.label.toLowerCase().includes("polytechnic"),
       ),
       medical: institutions.filter(
         (inst) =>
           inst.label.toLowerCase().includes("medical") ||
           inst.label.toLowerCase().includes("nursing") ||
           inst.label.toLowerCase().includes("physio") ||
-          inst.label.toLowerCase().includes("pharmacy")
+          inst.label.toLowerCase().includes("pharmacy"),
       ),
     };
     return categorized;
@@ -73,7 +73,7 @@ const InstitutionsSection = () => {
           <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
             A comprehensive network of{" "}
             <span className="font-semibold text-[#003d82]">
-               premier institutions
+              premier institutions
             </span>{" "}
             dedicated to excellence in education and healthcare
           </p>
@@ -135,7 +135,6 @@ const InstitutionsSection = () => {
         </AnimatePresence>
 
         {/* Stats Section */}
-        
       </div>
     </section>
   );
@@ -262,9 +261,7 @@ const StatCard = ({ number, label, color }) => {
         >
           {number}
         </motion.p>
-        <p className="text-xs md:text-sm font-medium text-gray-600">
-          {label}
-        </p>
+        <p className="text-xs md:text-sm font-medium text-gray-600">{label}</p>
       </div>
 
       {/* Decorative Circle */}
