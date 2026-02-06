@@ -7,7 +7,7 @@ import { alumniData } from "../../components/data/AluminiData.js";
 
 const AlumniTestimonials = () => {
   return (
-   <section className="py-20 bg-slate-100 overflow-hidden relative">
+   <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -63,7 +63,7 @@ const AlumniTestimonials = () => {
             {alumniData.map((alum) => (
               <SwiperSlide key={alum.id}>
                 <motion.div
-                  className="relative bg-white rounded-3xl shadow-md hover:shadow-xl p-8 h-full flex flex-col justify-between text-center transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+                  className="relative bg-white rounded-3xl shadow-lg hover:shadow-xl p-8 h-full flex flex-col justify-between text-center transition-all duration-500 hover:-translate-y-2 border-t-4 border-[#003d82]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
