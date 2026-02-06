@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
-import { statsData } from "../../components/data/StatsData";
+import { statsData } from "../../components/data/StatsData.js";
 
 // Enhanced counter hook with smooth spring animation
 function useCounter(value, duration = 2000) {
@@ -48,7 +48,14 @@ function useCounter(value, duration = 2000) {
   return { count, elementRef };
 }
 
-const StatCard = ({ icon: Icon, label, value, suffix = "", delay, description }) => {
+const StatCard = ({
+  icon: Icon,
+  label,
+  value,
+  suffix = "",
+  delay,
+  description,
+}) => {
   const { count, elementRef } = useCounter(value);
   const [isHovered, setIsHovered] = useState(false);
 
