@@ -5,6 +5,8 @@ import InstitutionSection from "../pages/Home/InstitutionSection";
 import StatsSection from "../pages/Home/Stats";
 import EventsSection from "../pages/Home/EventsSection";
 import TrusteeSection from "../pages/Home/TrusteeSection";
+import Accrediations from "../pages/Home/Accrediations";
+import AlumniTestimonials from "../pages/Home/AlumniTestimonials";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <StatsSection />
       <EventsSection />
       <TrusteeSection />
+      <Accrediations />
+      <AlumniTestimonials />
     </div>
   );
 };
