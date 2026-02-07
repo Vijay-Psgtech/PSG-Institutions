@@ -8,6 +8,7 @@ import TrusteeSection from "../pages/Home/TrusteeSection";
 import Accrediations from "../pages/Home/Accrediations";
 import AlumniTestimonials from "../pages/Home/AlumniTestimonials";
 import QuoteSection from "../pages/Home/QuoteSection";
+import Recruiters from "../pages/Home/Recruiters";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
       <Accrediations />
       <AlumniTestimonials />
       <QuoteSection />
+      <Recruiters />
     </div>
   );
 };
