@@ -292,9 +292,13 @@ const Header = () => {
                 {/* Mobile Dropdown */}
                 {item.subItems && (
                   <ul
-                    className={`overflow-hidden transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${
-                      activeDropdown === index ? "max-h-72" : "max-h-0"
+                    className={`overflow-y-auto transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${
+                      activeDropdown === index ? "max-h-80" : "max-h-0"
                     }`}
+                    style={{
+                      scrollbarWidth: "thin",
+                      scrollbarColor: "#0052ab #e5e7eb",
+                    }}
                   >
                     {Array.isArray(item.subItems) &&
                     item.subItems[0] &&
