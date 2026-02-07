@@ -7,6 +7,7 @@ import EventsSection from "../pages/Home/EventsSection";
 import TrusteeSection from "../pages/Home/TrusteeSection";
 import Accrediations from "../pages/Home/Accrediations";
 import AlumniTestimonials from "../pages/Home/AlumniTestimonials";
+import QuoteSection from "../pages/Home/QuoteSection";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <TrusteeSection />
       <Accrediations />
       <AlumniTestimonials />
+      <QuoteSection />
     </div>
   );
 };
