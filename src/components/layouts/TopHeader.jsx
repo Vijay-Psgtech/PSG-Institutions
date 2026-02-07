@@ -9,25 +9,25 @@ const TopHeader = () => {
           {/* Contact Info */}
           <div className="flex flex-wrap gap-6 text-sm">
             <a 
-              href="mailto:info@psginstitutions.in" 
+              href="mailto:charity@psgtech.edu" 
               className="flex items-center gap-2 hover:text-yellow-300 transition-all duration-300 hover:translate-x-0.5"
             >
               <Mail size={16} className="flex-shrink-0" />
-              <span className="hidden sm:inline">info@psginstitutions.in</span>
+              <span className="hidden sm:inline">charity@psgtech.edu</span>
             </a>
             <a 
-              href="tel:+919876543210" 
+              href="tel:+0422 257 2265" 
               className="flex items-center gap-2 hover:text-yellow-300 transition-all duration-300 hover:translate-x-0.5"
             >
               <Phone size={16} className="flex-shrink-0" />
-              <span>98765 43210</span>
+              <span>0422 257 2265 / 434 4000</span>
             </a>
           </div>
           
           {/* Social Links */}
           <div className="flex gap-3 md:gap-4">
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/psgandsonscharities" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Facebook"
@@ -35,7 +35,7 @@ const TopHeader = () => {
             >
               <Facebook size={18} />
             </a>
-            <a 
+            {/* <a 
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -43,9 +43,9 @@ const TopHeader = () => {
               className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-yellow-400 hover:text-[#003d82] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <Instagram size={18} />
-            </a>
+            </a> */}
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/psgandsonscharities/" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="LinkedIn"
@@ -54,7 +54,7 @@ const TopHeader = () => {
               <Linkedin size={18} />
             </a>
             <a 
-              href="https://youtube.com" 
+              href="https://www.youtube.com/@PSGandSonsCharities" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="YouTube"
