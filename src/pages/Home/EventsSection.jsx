@@ -133,14 +133,14 @@ const EventCard = ({
           <div className="flex items-center gap-2.5 text-sm md:text-base text-gray-600">
             <Calendar
               size={18}
-              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text text-transparent`}
+              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text `}
             />
             <span className="font-medium">{formatDate(event.date)}</span>
           </div>
           <div className="flex items-center gap-2.5 text-sm md:text-base text-gray-600">
             <MapPin
               size={18}
-              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text text-transparent`}
+              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text`}
             />
             <span className="line-clamp-1">{event.institute}</span>
           </div>
