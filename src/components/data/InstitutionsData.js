@@ -61,6 +61,7 @@ export const institutionsData = [
     mission: "To evolve, empower and enlighten Sarvajana through education",
     vision:
       "To realise our vision through continuous, committed and collective effort, unfolding goodwill, quality, social relevance and global citizenship",
+    tagline: "Serve and Smile"
   },
   {
     label: "PSG Primary School, Vedapatti",
@@ -74,7 +75,8 @@ export const institutionsData = [
     </p>
     `,
     mission: "To realize our vision through a burning desire by a converged effort and a planned execution with the best practices available and to develop as trend setters.",
-    vision: "To create dynamic, dedicated, diplomatic and dignified citizens to the society."
+    vision: "To create dynamic, dedicated, diplomatic and dignified citizens to the society.",
+    tagline: "Sincere – Sedulous – Soar Up"
   },
   {
     label: "PSG Primary School, Peelamedu",
@@ -102,7 +104,8 @@ export const institutionsData = [
     </p>
     `,
     mission: "To impart an enriched education with self-discipline and inner elevation to be a good citizen.",
-    vision: "Providing Education, Life  Skills, Values, and a Caring Environment that empower to successfully move into the stream of society."
+    vision: "Providing Education, Life  Skills, Values, and a Caring Environment that empower to successfully move into the stream of society.",
+    tagline: "Be first or be with the first."
   },
   {
     label: "PSG Public Schools",
@@ -126,7 +129,8 @@ export const institutionsData = [
         Emphasising experiential and active learning, we will design assessment plans aligned with Multiple Intelligences (MI) to cater to diverse learners.
       </li>
     </ul>`,
-    vision: "To be a pioneering institution that fosters excellence in education through a holistic, inclusive, and technology-driven approach. We envision a safe, nurturing, and dynamic learning ecosystem that enhances critical thinking, creativity, collaboration, and ethical leadership, equipping students to excel in an evolving global landscape"
+    vision: "To be a pioneering institution that fosters excellence in education through a holistic, inclusive, and technology-driven approach. We envision a safe, nurturing, and dynamic learning ecosystem that enhances critical thinking, creativity, collaboration, and ethical leadership, equipping students to excel in an evolving global landscape",
+    tagline: "Create the desire to learn..."
   },
   {
     label: "PSG Matriculation School",
@@ -142,7 +146,8 @@ export const institutionsData = [
     </p>
     `,
     mission: "To facilitate children realize and manifest their inborn divinity in a happy and conducive environment leading to qualitative changes in their character.",
-    vision: "To bring about holistic development in children by providing quality education and opportunities for self discovery of their potential."
+    vision: "To bring about holistic development in children by providing quality education and opportunities for self discovery of their potential.",
+    tagline: "Explore –  Enrich –  Excel"
   },
 
   {
@@ -164,6 +169,7 @@ export const institutionsData = [
       <li>• To progressively adopt ICT enabled Teaching-Learning methods.</li>
       <li>• To maintain  a vibrant research  culture.</li>
     </ul>`,
+    tagline: "Excellence in Arts and Science Education"
   },
   {
     label: "PSG College of Technology",
@@ -194,6 +200,7 @@ export const institutionsData = [
         society for the betterment of the country.
       </p>
     `,
+    tagline: "Provide world-class Engineering Education, Foster Research and Development. Evolve innovative applications of Technology."
   },
   {
     label: "PSG Institute of Management",
@@ -213,7 +220,8 @@ export const institutionsData = [
       <li>• Research - Focus on academic and industry based research relevant to the region.</li>
       <li>• Nurture - Enhance the institute’s visibility, growth and value by espousing ethics and social responsibility and by collaborating with institutional and professional stakeholder groups.</li>
     </ul>`,
-    vision: "To be a leader among the private business schools in India, by proactively engaging with our stakeholders in academics, research and skill development and bench-marking ourselves with the best-in-class standards of business education."
+    vision: "To be a leader among the private business schools in India, by proactively engaging with our stakeholders in academics, research and skill development and bench-marking ourselves with the best-in-class standards of business education.",
+    tagline: "Inspiring Individuals, Transforming Societies"
   },
   {
     label: "PSG Institute of Advanced Studies",
@@ -231,7 +239,8 @@ export const institutionsData = [
       </p>
     `,
     mission: "Our mission is to continuously explore and enhance academic collaboration with universities abroad for cross border mobility of students and faculty of PSG Institutions and promote innovative research and technology business incubation.",
-    vision: "Our vision is to become an Institution of excellence in cross border mobility of faculty and students and promotion of translational research."
+    vision: "Our vision is to become an Institution of excellence in cross border mobility of faculty and students and promotion of translational research.",
+    tagline: "Explore, Innovate, Inspire - Globally."
   },
   {
     label: "PSG Institute of Technology & Applied Research",
@@ -273,7 +282,8 @@ export const institutionsData = [
       </p>
     `,
     mission: "To provide intellectually stimulating environment, where students find their creative identities and emerge with an interdisciplinary education in Art, Architecture, Planning, Design and Technology along with a deep-rooted knowledge of one’s own surroundings, social awareness, and grounding in cultural heritage, resulting in ethical, responsible professionals.",
-    vision: "To achieve academic excellence in Architecture and Planning through innovating, creating, acquiring and disseminating knowledge using sustainable local and global practices and enhancing the quality of society through responsible built environment."
+    vision: "To achieve academic excellence in Architecture and Planning through innovating, creating, acquiring and disseminating knowledge using sustainable local and global practices and enhancing the quality of society through responsible built environment.",
+    tagline: "Approved by Council of Architecture New Delhi | Affiliated to Anna University, Chennai"
   },
   {
     label: "PSG Polytechnic College",
@@ -327,7 +337,8 @@ export const institutionsData = [
         <li>• To provide an ideal environment for medical education and research.</li>
         <li>• To constantly upgrade the quality of medical practice and education in the hospital.</li>
       </ul>
-    `
+    `,
+    tagline: "Scientific, Ethical and Quality Health Care",
   },
   {
     label: "PSG College of Nursing",
@@ -360,7 +371,8 @@ export const institutionsData = [
       </p>
     `,
     mission: "PSG College of Physiotherapy is committed to produce skilled, dedicated, world class Physiotherapists who will have clinical competencies, skills and attitudes inherent to clinical practice and adhere to ethical and legal principles established and expected by the profession, community and governmental agencies.",
-    vision: "We, at PSG College of Physiotherapy, are determined to raise the standards of Physiotherapy teaching by quality improvement of faculty & to promote research activities thereby making the Institute the best in the country."
+    vision: "We, at PSG College of Physiotherapy, are determined to raise the standards of Physiotherapy teaching by quality improvement of faculty & to promote research activities thereby making the Institute the best in the country.",
+    tagline: "Leap Learn Light"
   },
   {
     label: "PSG College of Pharmacy",
@@ -384,6 +396,7 @@ export const institutionsData = [
         <li>• Develop viable outreach program for societal benefit.</li>
       </ul>
     `,
-    vision: "To be the leaders at the frontiers in Pharmacy education, research & practice at national level with global recognition."
+    vision: "To be the leaders at the frontiers in Pharmacy education, research & practice at national level with global recognition.",
+    tagline: "ISO 9001 : 2015 Certified Institution"
   },
 ];
