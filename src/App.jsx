@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
 import HomePage from "./components/HomePage";
+import Institutions from "./pages/Institutions/Institutions";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/institutions/:id" element={<Institutions />} />
         </Route>
       </Routes>
     </>

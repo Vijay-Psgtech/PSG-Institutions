@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,18 +26,16 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { name: "Home", link: "#home" },
+    { name: "Home", link: "/" },
     {
       name: "About",
-      link: "#about",
       subItems: [
-        { name: "Our History", link: "#history" },
+        { name: "Our History", link: "/history" },
         { name: "Vision & Mission", link: "#vision" },
       ],
     },
     {
       name: "Institutions",
-      link: "#institutions",
       subItems: [
         {
           groupName: "Schools",
@@ -101,7 +100,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4 md:py-5 relative">
           {/* Logo */}
           <a
-            href="#home"
+            href="/"
             className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
           >
             {/* Logo Image */}
@@ -199,12 +198,18 @@ const Header = () => {
                               <ul>
                                 {group.items.map((s, si) => (
                                   <li key={si}>
-                                    <a
-                                      href={s.link}
+                                    <Link
+                                      to={`/institutions/${encodeURIComponent(s.name)}`}
+                                       onClick={(e) => {
+                                          if (window.location.pathname === `/institution/${encodeURIComponent(institution.name)}`) {
+                                            e.preventDefault();
+                                            window.location.reload();
+                                          }
+                                        }}
                                       className="block px-2 py-2 text-gray-700 text-sm hover:bg-[#0052ab]/5 hover:text-[#0052ab] rounded transition"
                                     >
                                       {s.name}
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
@@ -311,13 +316,22 @@ const Header = () => {
                             <ul>
                               {group.items.map((s, si) => (
                                 <li key={si}>
-                                  <a
-                                    href={s.link}
-                                    onClick={toggleMobileMenu}
+                                  <Link
+                                    to={`/institutions/${encodeURIComponent(s.name)}`}
+                                    onClick={(e) => 
+                                      {
+                                        if (window.location.pathname === `/institution/${encodeURIComponent(s.name)}`) {
+                                          e.preventDefault();
+                                          window.location.reload();
+                                        }
+                                         toggleMobileMenu();
+                                      }
+                                    }
+
                                     className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
                                   >
                                     {s.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
