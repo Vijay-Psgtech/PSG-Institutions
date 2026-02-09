@@ -154,16 +154,17 @@ const InstitutionDetails = () => {
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-center md:text-left">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h3>
-            <p className="text-gray-100 leading-relaxed text-base sm:text-lg whitespace-pre-line">
-              {institution.mission}
-            </p>
-          </div>
-          <div>
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Vision</h3>
-            <div
+             <div
               className="prose max-w-none text-gray-100 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
               dangerouslySetInnerHTML={{ __html: institution.vision }}
+            ></div>
+          </div>
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h3>
+            <div
+              className="prose max-w-none text-gray-100 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
+              dangerouslySetInnerHTML={{ __html: institution.mission }}
             ></div>
           </div>
         </div>

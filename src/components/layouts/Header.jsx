@@ -40,35 +40,33 @@ const Header = () => {
         {
           groupName: "Schools",
           items: [
-            { name: "PSG Sarvajana High School", link: "*" },
-            { name: "PSG Primary School, Vedapatti", link: "*" },
-            { name: "PSG Primary School, Peelamedu", link: "*" },
-            { name: "PSG High School, Vedapatti", link: "*" },
-            { name: "PSG Public Schools", link: "*" },
+            { name: "PSG Sarvajana High School" },
+            { name: "PSG Primary School, Vedapatti" },
+            { name: "PSG Primary School, Peelamedu" },
+            { name: "PSG High School, Vedapatti" },
+            { name: "PSG Public Schools" },
+            { name: "PSG Matriculation School" },
           ],
         },
         {
           groupName: "Colleges & Institutes",
           items: [
-            { name: "PSG College of Arts & Sciences", link: "*" },
-            { name: "PSG College of Technology", link: "*" },
-            { name: "PSG Institute of Management", link: "*" },
-            { name: "PSG Institute of Advanced Studies", link: "*" },
-            {
-              name: "PSG Institute of Technology & Applied Research",
-              link: "*",
-            },
-            { name: "PSG Institute of Architecture & Planning", link: "*" },
-            { name: "PSG Polytechnic College", link: "*" },
+            { name: "PSG College of Arts & Sciences" },
+            { name: "PSG College of Technology" },
+            { name: "PSG Institute of Management" },
+            { name: "PSG Institute of Advanced Studies" },
+            { name: "PSG Institute of Technology & Applied Research" },
+            { name: "PSG Institute of Architecture & Planning" },
+            { name: "PSG Polytechnic College" },
           ],
         },
         {
           groupName: "Medical & Healthcare",
           items: [
-            { name: "PSG Institute of Medical Sciences & Research", link: "*" },
-            { name: "PSG College of Nursing", link: "*" },
-            { name: "PSG College of Physiotherapy", link: "*" },
-            { name: "PSG College of Pharmacy", link: "*" },
+            { name: "PSG Institute of Medical Sciences & Research" },
+            { name: "PSG College of Nursing" },
+            { name: "PSG College of Physiotherapy" },
+            { name: "PSG College of Pharmacy" },
           ],
         },
       ],
@@ -200,12 +198,15 @@ const Header = () => {
                                   <li key={si}>
                                     <Link
                                       to={`/institutions/${encodeURIComponent(s.name)}`}
-                                       onClick={(e) => {
-                                          if (window.location.pathname === `/institution/${encodeURIComponent(institution.name)}`) {
-                                            e.preventDefault();
-                                            window.location.reload();
-                                          }
-                                        }}
+                                      onClick={(e) => {
+                                        if (
+                                          window.location.pathname ===
+                                          `/institution/${encodeURIComponent(institution.name)}`
+                                        ) {
+                                          e.preventDefault();
+                                          window.location.reload();
+                                        }
+                                      }}
                                       className="block px-2 py-2 text-gray-700 text-sm hover:bg-[#0052ab]/5 hover:text-[#0052ab] rounded transition"
                                     >
                                       {s.name}
@@ -318,16 +319,16 @@ const Header = () => {
                                 <li key={si}>
                                   <Link
                                     to={`/institutions/${encodeURIComponent(s.name)}`}
-                                    onClick={(e) => 
-                                      {
-                                        if (window.location.pathname === `/institution/${encodeURIComponent(s.name)}`) {
-                                          e.preventDefault();
-                                          window.location.reload();
-                                        }
-                                         toggleMobileMenu();
+                                    onClick={(e) => {
+                                      if (
+                                        window.location.pathname ===
+                                        `/institution/${encodeURIComponent(s.name)}`
+                                      ) {
+                                        e.preventDefault();
+                                        window.location.reload();
                                       }
-                                    }
-
+                                      toggleMobileMenu();
+                                    }}
                                     className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
                                   >
                                     {s.name}
