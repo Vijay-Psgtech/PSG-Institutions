@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Calendar, GraduationCap } from "lucide-react";
-import { institutions } from "../../components/data/InstitutionsData.js";
+import { institutionsData } from "../../components/data/InstitutionsData.js";
+import { Link } from "react-router-dom";
 
 const InstitutionsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -16,28 +17,18 @@ const InstitutionsSection = () => {
 
   const categorizeInstitutions = () => {
     const categorized = {
-      all: institutions,
-      schools: institutions.filter(
+      all: institutionsData,
+      schools: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("school") ||
-          inst.label.toLowerCase().includes("primary"),
+          inst.category === 'School'
       ),
-      colleges: institutions.filter(
+      colleges: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("college") ||
-          (inst.label.toLowerCase().includes("institute") &&
-            !inst.label.toLowerCase().includes("medical") &&
-            !inst.label.toLowerCase().includes("nursing") &&
-            !inst.label.toLowerCase().includes("physio") &&
-            !inst.label.toLowerCase().includes("pharmacy")) ||
-          inst.label.toLowerCase().includes("polytechnic"),
+          inst.category === 'College'
       ),
-      medical: institutions.filter(
+      medical: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("medical") ||
-          inst.label.toLowerCase().includes("nursing") ||
-          inst.label.toLowerCase().includes("physio") ||
-          inst.label.toLowerCase().includes("pharmacy"),
+          inst.category === 'Medical'
       ),
     };
     return categorized;
@@ -198,9 +189,21 @@ const InstitutionCard = ({ institution, index }) => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-            <ExternalLink size={18} className="text-[#003d82]" />
-          </div>
+          <Link 
+            to={`institutions/${encodeURIComponent(institution.label)}`}
+            state={
+              {
+                'image': institution.image,
+                'label': institution.label,
+                'est': institution.establishment
+              }
+            }
+          >
+            <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+              <ExternalLink size={18} className="text-[#003d82]" />
+            </div>
+          </Link>
+          
         </motion.div>
       </div>
 
