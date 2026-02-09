@@ -47,6 +47,7 @@ import psgpharmalogo from "../../assets/images/logos/psgpharma-logo.png"
 export const institutionsData = [
   {
     label: "PSG Sarvajana High School",
+    category: "School",
     establishment: "1924",
     image: PsgSarv,
     logo: psgsjhsslogo,
@@ -65,6 +66,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Primary School, Vedapatti",
+    category: "School",
     establishment: "1941",
     image: PsgPsv,
     logo: psgpsvlogo,
@@ -80,6 +82,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Primary School, Peelamedu",
+    category: "School",
     establishment: "1943",
     image: PsgPsp,
     logo: psgpsplogo,
@@ -94,6 +97,7 @@ export const institutionsData = [
   },
   {
     label: "PSG High School, Vedapatti",
+    category: "School",
     establishment: "2005",
     image: PsgHs,
     logo: psghsvlogo,
@@ -109,6 +113,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Public Schools",
+    category: "School",
     establishment: "2002",
     image: PsgPs,
     logo: psgpslogo,
@@ -134,6 +139,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Matriculation School",
+    category: "School",
     establishment: "2009",
     image: PsgMsp,
     logo: psgmsplogo,
@@ -152,6 +158,7 @@ export const institutionsData = [
 
   {
     label: "PSG College of Arts & Sciences",
+    category: "College",
     establishment: "1947",
     image: PsgCas,
     logo: psgcaslogo,
@@ -173,6 +180,7 @@ export const institutionsData = [
   },
   {
     label: "PSG College of Technology",
+    category: "College",
     establishment: "1951",
     image: PsgCt,
     logo: psgctlogo,
@@ -204,6 +212,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Institute of Management",
+    category: "College",
     establishment: "1994",
     image: PsgIm,
     logo: psgimlogo,
@@ -225,6 +234,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Institute of Advanced Studies",
+    category: "College",
     establishment: "2006",
     image: PsgIas,
     logo: psgiaslogo,
@@ -244,6 +254,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Institute of Technology & Applied Research",
+    category: "College",
     establishment: "2014",
     image: PsgItech,
     logo: psgitechlogo,
@@ -268,6 +279,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Institute of Architecture & Planning",
+    category: "College",
     establishment: "2021",
     image: PsgArch,
     logo: psgiaplogo,
@@ -287,6 +299,7 @@ export const institutionsData = [
   },
   {
     label: "PSG Polytechnic College",
+    category: "College",
     establishment: "1939",
     image: PsgPolyTech,
     logo: psgpolylogo,
@@ -315,6 +328,7 @@ export const institutionsData = [
 
   {
     label: "PSG Institute of Medical Sciences & Research",
+    category: "Medical",
     establishment: "1985",
     image: PsgImsr,
     logo: psgimsrlogo,
@@ -342,6 +356,7 @@ export const institutionsData = [
   },
   {
     label: "PSG College of Nursing",
+    category: "Medical",
     establishment: "1994",
     image: PsgNursing,
     logo: psgnursinglogo,
@@ -361,6 +376,7 @@ export const institutionsData = [
   },
   {
     label: "PSG College of Physiotherapy",
+    category: "Medical",
     establishment: "1999",
     image: PsgPhysio,
     logo: psgphysiologo,
@@ -376,6 +392,7 @@ export const institutionsData = [
   },
   {
     label: "PSG College of Pharmacy",
+    category: "Medical",
     establishment: "2001",
     image: PsgPharma,
     logo: psgpharmalogo,

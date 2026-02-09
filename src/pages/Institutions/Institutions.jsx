@@ -146,7 +146,7 @@ const InstitutionDetails = () => {
 
       {/* Mission and Vision Section */}
       <motion.div
-        className="bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white py-16 px-6"
+        className="bg-blue-100 text-white py-16 px-6"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -154,16 +154,16 @@ const InstitutionDetails = () => {
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-center md:text-left">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Vision</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#003d82]">Our Vision</h3>
              <div
-              className="prose max-w-none text-gray-100 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
+              className="prose max-w-none text-gray-900 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
               dangerouslySetInnerHTML={{ __html: institution.vision }}
             ></div>
           </div>
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#003d82]">Our Mission</h3>
             <div
-              className="prose max-w-none text-gray-100 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
+              className="prose max-w-none text-gray-900 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
               dangerouslySetInnerHTML={{ __html: institution.mission }}
             ></div>
           </div>

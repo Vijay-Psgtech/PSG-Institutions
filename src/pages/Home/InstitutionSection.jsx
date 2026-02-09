@@ -20,25 +20,15 @@ const InstitutionsSection = () => {
       all: institutionsData,
       schools: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("school") ||
-          inst.label.toLowerCase().includes("primary"),
+          inst.category === 'School'
       ),
       colleges: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("college") ||
-          (inst.label.toLowerCase().includes("institute") &&
-            !inst.label.toLowerCase().includes("medical") &&
-            !inst.label.toLowerCase().includes("nursing") &&
-            !inst.label.toLowerCase().includes("physio") &&
-            !inst.label.toLowerCase().includes("pharmacy")) ||
-          inst.label.toLowerCase().includes("polytechnic"),
+          inst.category === 'College'
       ),
       medical: institutionsData.filter(
         (inst) =>
-          inst.label.toLowerCase().includes("medical") ||
-          inst.label.toLowerCase().includes("nursing") ||
-          inst.label.toLowerCase().includes("physio") ||
-          inst.label.toLowerCase().includes("pharmacy"),
+          inst.category === 'Medical'
       ),
     };
     return categorized;
