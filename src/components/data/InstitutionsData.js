@@ -54,8 +54,8 @@ export const institutionsData = [
     webLink: "https://psgsjhss.edu.in/",
     description: `
       <p>
-        The century-old PSG Sarvajana Higher Secondary School is situated in the salubrious climate of Peelamedu in Coimbatore. It has made remarkable strides in terms of physical growth, academic feats and also in the field of sports. It is difficult to bring into the narrow compass of history, all its accomplishments and achievements.
-        Swami Vivekananda said, “The aim of education is the attainment of human excellence”. Having this perspective in mind, the school moulds the children in a harmonious and positive way. It amalgamates scholastic and co-curricular activities while grounded in our cultural and moral values.
+        The century-old <strong>PSG Sarvajana Higher Secondary School</strong> is situated in the salubrious climate of Peelamedu in Coimbatore. It has made remarkable strides in terms of physical growth, academic feats and also in the field of sports. It is difficult to bring into the narrow compass of history, all its accomplishments and achievements.
+        Swami Vivekananda said, <strong>“The aim of education is the attainment of human excellence”</strong>. Having this perspective in mind, the school moulds the children in a harmonious and positive way. It amalgamates scholastic and co-curricular activities while grounded in our cultural and moral values.
         The catalyst that drives the Faculty of the school is the motto <strong>“Serve and Smile”</strong>, which ensures that the children are nurtured and empowered to contribute to the world as global leaders.
       </p>
     `,
@@ -286,7 +286,7 @@ export const institutionsData = [
     webLink: "https://www.psgiap.ac.in/",
     description: `
       <p>
-        PSGIAP is a shining jewel in the academic legacy of PSG and Sons’ Charities, established in 2021 with the motto of "INFINITE INGENUITY." At PSGIAP, we prioritize the holistic development of our students, blending value-based education with strong ethical foundations. Our mission is to nurture future architects, practitioners, and professionals who embody a commitment to lifelong learning and a responsibility to serve society as agents of positive change. We aim to equip our students with the skills and mind-set needed to address diverse human and social needs.<br /><br />
+        <strong>PSGIAP</strong> is a shining jewel in the academic legacy of PSG and Sons’ Charities, established in 2021 with the motto of <strong>"INFINITE INGENUITY."</strong> At PSGIAP, we prioritize the holistic development of our students, blending value-based education with strong ethical foundations. Our mission is to nurture future architects, practitioners, and professionals who embody a commitment to lifelong learning and a responsibility to serve society as agents of positive change. We aim to equip our students with the skills and mind-set needed to address diverse human and social needs.<br /><br />
 
         Currently, the institute offers a five-year full-time undergraduate degree program in Bachelor of Architecture (B.Arch), affiliated to Anna University, Chennai, and approved by the Council of Architecture, New Delhi.<br /><br />
 
