@@ -1,35 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import nirf from "../../assets/images/accerdiations/nirf.png";
-import naac from "../../assets/images/accerdiations/naac.png";
-import nba from "../../assets/images/accerdiations/nba.png";
-import naac1 from "../../assets/images/accerdiations/naac-A.png";
-import aicte from "../../assets/images/accerdiations/aicte.webp";
-import acbsp from "../../assets/images/accerdiations/acbsp.png";
-import aacsb from "../../assets/images/accerdiations/aacsb.png";
-import rgt from "../../assets/images/accerdiations/rgt.png";
-import ahpi from "../../assets/images/accerdiations/ahpi.png";
-import nabh from "../../assets/images/accerdiations/nabh.png";
-import nabh1 from "../../assets/images/accerdiations/nabh-it.png";
-import nabh2 from "../../assets/images/accerdiations/nabh-nursing.jpg";
-import nabl from "../../assets/images/accerdiations/nabl-logo.png";
-
-const acceridationsLogo = [
-  nirf,
-  naac,
-  nba,
-  naac1,
-  aicte,
-  acbsp,
-  aacsb,
-  rgt,
-  ahpi,
-  nabh,
-  nabh1,
-  nabh2,
-  nabl,
-];
+import { acceridationsLogo } from "../../components/data/AccrediationsData";
 
 const Accrediations = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -50,7 +21,8 @@ const Accrediations = () => {
           </h2>
           <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#0052ab] to-transparent rounded-full"></div>
           <p className="text-gray-600 mt-4 text-sm sm:text-base max-w-2xl mx-auto">
-            Recognized by premier national and international accreditation bodies.
+            Recognized by premier national and international accreditation
+            bodies.
           </p>
         </motion.div>
 
@@ -73,7 +45,11 @@ const Accrediations = () => {
             style={{ width: "max-content" }}
           >
             {/* Main + Duplicate Logos for seamless flow */}
-            {[...acceridationsLogo, ...acceridationsLogo, ...acceridationsLogo].map((logo, index) => (
+            {[
+              ...acceridationsLogo,
+              ...acceridationsLogo,
+              ...acceridationsLogo,
+            ].map((logo, index) => (
               <motion.div
                 key={index}
                 className="flex-shrink-0 w-24 sm:w-32 md:w-36 lg:w-40"
