@@ -60,6 +60,7 @@ const Accrediations = () => {
                   src={logo}
                   alt={`accreditation-logo-${index}`}
                   className="object-contain w-full h-16 sm:h-20 md:h-24 filter drop-shadow-md hover:drop-shadow-xl transition-all duration-300"
+                  loading="lazy"
                 />
               </motion.div>
             ))}

@@ -38,6 +38,7 @@ const Footer = () => {
                   src="/logo.png" 
                   alt="PSG Institutions Logo" 
                   className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  loading='lazy'
                 />
                 {/* Logo Text */}
                 <div className="flex flex-col">

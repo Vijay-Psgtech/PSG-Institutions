@@ -45,6 +45,7 @@ const TrusteeSection = () => {
                 src={trusteeImg}
                 alt="L. Gopalakrishnan portrait"
                 className="w-full h-80 sm:h-96 lg:h-full object-cover"
+                loading="lazy"
               />
             </div>
 

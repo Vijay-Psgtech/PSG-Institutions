@@ -58,6 +58,7 @@ const Recruiters = () => {
                     src={logo}
                     alt={`accreditation-logo-${index}`}
                     className="object-contain w-24 sm:w-28 md:w-32 lg:w-36 h-16 sm:h-20 md:h-24 filter drop-shadow-md hover:drop-shadow-xl transition-transform duration-300 hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
               </SwiperSlide>
