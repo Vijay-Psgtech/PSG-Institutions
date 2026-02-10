@@ -128,7 +128,7 @@ const Footer = () => {
               {/* Social Links */}
               <div className="flex gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/psgandsonscharities"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -136,7 +136,7 @@ const Footer = () => {
                 >
                   <Facebook size={20} />
                 </a>
-                <a
+                {/* <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -144,9 +144,9 @@ const Footer = () => {
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-yellow-400 hover:text-[#003d82] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_16px_rgba(255,235,59,0.3)]"
                 >
                   <Instagram size={20} />
-                </a>
+                </a> */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/psgandsonscharities/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -155,7 +155,7 @@ const Footer = () => {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@PSGandSonsCharities"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
@@ -166,7 +166,7 @@ const Footer = () => {
               </div>
 
               {/* Newsletter */}
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h4 className="text-base font-semibold text-white">Newsletter</h4>
                 <form className="flex flex-col sm:flex-row gap-2">
                   <input
@@ -182,7 +182,7 @@ const Footer = () => {
                     Subscribe
                   </button>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
