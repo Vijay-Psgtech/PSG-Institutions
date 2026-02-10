@@ -91,6 +91,7 @@ const InstitutionDetails = () => {
               src={institution.aboutImage || institution.image}
               alt={`${institution.name} campus`}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              loading="lazy"
             />
           </motion.div>
 

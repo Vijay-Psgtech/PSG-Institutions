@@ -106,12 +106,14 @@ const Header = () => {
               src="/logo.png"
               alt="PSG Institutions Logo"
               className="h-12 md:h-14 lg:h-18 w-auto object-contain"
+              loading="lazy"
             />
             {/* 100 Years Badge */}
             <img
               src="/100yearsLogo.png"
               alt="PSG 100 Years"
               className="h-8 md:h-10 lg:h-12 w-auto object-contain ml-1"
+              loading="lazy"
             />
             {/* Logo Text */}
             <div className="flex flex-col">

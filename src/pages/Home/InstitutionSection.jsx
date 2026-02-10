@@ -152,6 +152,7 @@ const InstitutionCard = ({ institution, index }) => {
           src={institution.image}
           alt={institution.label}
           className="w-full h-full object-cover"
+          loading="lazy"
           animate={{
             scale: isHovered ? 1.1 : 1,
           }}
@@ -237,40 +238,6 @@ const InstitutionCard = ({ institution, index }) => {
         }}
         transition={{ duration: 0.4 }}
       />
-    </motion.div>
-  );
-};
-
-// Stats Card Component
-const StatCard = ({ number, label, color }) => {
-  return (
-    <motion.div
-      className="relative group bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
-      whileHover={{ y: -4 }}
-    >
-      {/* Background Gradient */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-br ${color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
-      ></div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        <motion.p
-          className={`text-4xl md:text-5xl font-extrabold bg-gradient-to-br ${color} bg-clip-text text-transparent mb-2`}
-          initial={{ scale: 0.5, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, type: "spring" }}
-        >
-          {number}
-        </motion.p>
-        <p className="text-xs md:text-sm font-medium text-gray-600">{label}</p>
-      </div>
-
-      {/* Decorative Circle */}
-      <div
-        className={`absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
-      ></div>
     </motion.div>
   );
 };

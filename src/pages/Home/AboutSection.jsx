@@ -52,6 +52,7 @@ const AboutSection = () => {
                 src={aboutImg}
                 alt="PSG Institutions - Excellence in Education Since 1926"
                 className="w-full h-auto object-cover"
+                loading="lazy"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
