@@ -4,7 +4,7 @@ export const statsData = [
   {
     id: 1,
     label: "Students Enrolled",
-    value: 25000,
+    value: 50000,
     suffix: "+",
     icon: Users,
     description: "Active learners pursuing excellence across all programs",
@@ -12,7 +12,7 @@ export const statsData = [
   {
     id: 2,
     label: "Institutions",
-    value: 17,
+    value: 18,
     suffix: "",
     icon: Building2,
     description: "World-class educational facilities and infrastructure",

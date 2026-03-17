@@ -40,33 +40,34 @@ const Header = () => {
         {
           groupName: "Schools",
           items: [
-            { name: "PSG Sarvajana High School" },
-            { name: "PSG Primary School, Vedapatti" },
-            { name: "PSG Primary School, Peelamedu" },
-            { name: "PSG High School, Vedapatti" },
-            { name: "PSG Public Schools" },
-            { name: "PSG Matriculation School" },
+            { name: "PSG Sarvajana High School", slug: "psg-sarvajana-high-school" },
+            { name: "PSG Primary School, Vedapatti", slug: "psg-primary-school-vedapatti" },
+            { name: "PSG Primary School, Peelamedu", slug: "psg-primary-school-peelamedu" },
+            { name: "PSG High School, Vedapatti", slug: "psg-high-school-vedapatti" },
+            { name: "PSG Public Schools", slug: "psg-public-schools" },
+            { name: "PSG Matriculation School", slug: "psg-matriculation-school" },
+            { name: "PSG World School", slug: "psg-world-school" },
           ],
         },
         {
           groupName: "Colleges & Institutes",
           items: [
-            { name: "PSG College of Arts & Sciences" },
-            { name: "PSG College of Technology" },
-            { name: "PSG Institute of Management" },
-            { name: "PSG Institute of Advanced Studies" },
-            { name: "PSG Institute of Technology & Applied Research" },
-            { name: "PSG Institute of Architecture & Planning" },
-            { name: "PSG Polytechnic College" },
+            { name: "PSG College of Arts & Sciences", slug: "psg-college-of-arts-sciences" },
+            { name: "PSG College of Technology", slug: "psg-college-of-technology" },
+            { name: "PSG Institute of Management", slug: "psg-institute-of-management" },
+            { name: "PSG Institute of Advanced Studies", slug: "psg-institute-of-advanced-studies" },
+            { name: "PSG Institute of Technology & Applied Research", slug: "psg-institute-of-technology-applied-research" },
+            { name: "PSG Institute of Architecture & Planning", slug: "psg-institute-of-architecture-planning" },
+            { name: "PSG Polytechnic College", slug: "psg-polytechnic-college" },
           ],
         },
         {
           groupName: "Medical & Healthcare",
           items: [
-            { name: "PSG Institute of Medical Sciences & Research" },
-            { name: "PSG College of Nursing" },
-            { name: "PSG College of Physiotherapy" },
-            { name: "PSG College of Pharmacy" },
+            { name: "PSG Institute of Medical Sciences & Research", slug: "psg-institute-of-medical-sciences-research" },
+            { name: "PSG College of Nursing", slug: "psg-college-of-nursing" },
+            { name: "PSG College of Physiotherapy", slug: "psg-college-of-physiotherapy" },
+            { name: "PSG College of Pharmacy", slug: "psg-college-of-pharmacy" },
           ],
         },
       ],
@@ -88,11 +89,10 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-        isScrolled
-          ? "shadow-[0_4px_20px_rgba(0,0,0,0.12)]"
-          : "shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-      }`}
+      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${isScrolled
+        ? "shadow-[0_4px_20px_rgba(0,0,0,0.12)]"
+        : "shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4 md:py-5 relative">
@@ -180,15 +180,14 @@ const Header = () => {
                           closeTimeoutRef.current = null;
                         }, 150);
                       }}
-                      className={`absolute top-full left-0 mt-1 z-50 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 ${item.name === "Institutions" ? "w-180" : "w-50"} transition-all duration-300 ${
-                        activeDropdown === index
-                          ? "opacity-100 visible translate-y-0"
-                          : "opacity-0 invisible -translate-y-2 pointer-events-none"
-                      }`}
+                      className={`absolute top-full left-0 mt-1 z-50 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 ${item.name === "Institutions" ? "w-180" : "w-50"} transition-all duration-300 ${activeDropdown === index
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                        }`}
                     >
                       {Array.isArray(item.subItems) &&
-                      item.subItems[0] &&
-                      item.subItems[0].items ? (
+                        item.subItems[0] &&
+                        item.subItems[0].items ? (
                         <div className="grid grid-cols-3 gap-4 p-4">
                           {item.subItems.map((group, gi) => (
                             <div key={gi} className="min-w-[160px]">
@@ -199,15 +198,13 @@ const Header = () => {
                                 {group.items.map((s, si) => (
                                   <li key={si}>
                                     <Link
-                                      to={`/institutions/${encodeURIComponent(s.name)}`}
+                                      to={`/institutions/${s.slug}`}
                                       onClick={(e) => {
-                                        if (
-                                          window.location.pathname ===
-                                          `/institution/${encodeURIComponent(institution.name)}`
-                                        ) {
-                                          e.preventDefault();
-                                          window.location.reload();
+                                       if (closeTimeoutRef.current) {
+                                          clearTimeout(closeTimeoutRef.current);
+                                          closeTimeoutRef.current = null;
                                         }
+                                        setActiveDropdown(null);
                                       }}
                                       className="block px-2 py-2 text-gray-700 text-sm hover:bg-[#0052ab]/5 hover:text-[#0052ab] rounded transition"
                                     >
@@ -263,9 +260,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <nav
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <ul className="py-4 space-y-1">
             {menuItems.map((item, index) => (
@@ -289,9 +285,8 @@ const Header = () => {
                     >
                       <ChevronDown
                         size={18}
-                        className={`transition-transform duration-300 ${
-                          activeDropdown === index ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${activeDropdown === index ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                   )}
@@ -300,57 +295,56 @@ const Header = () => {
                 {/* Mobile Dropdown */}
                 {item.subItems && (
                   <ul
-                    className={`overflow-y-auto transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${
-                      activeDropdown === index ? "max-h-80" : "max-h-0"
-                    }`}
+                    className={`overflow-y-auto transition-all duration-300 bg-[#0052ab]/3 rounded-lg my-1 ${activeDropdown === index ? "max-h-80" : "max-h-0"
+                      }`}
                     style={{
                       scrollbarWidth: "thin",
                       scrollbarColor: "#0052ab #e5e7eb",
                     }}
                   >
                     {Array.isArray(item.subItems) &&
-                    item.subItems[0] &&
-                    item.subItems[0].items
+                      item.subItems[0] &&
+                      item.subItems[0].items
                       ? item.subItems.map((group, gi) => (
-                          <li key={gi} className="py-1">
-                            <div className="px-5 py-2 text-sm font-semibold text-gray-800">
-                              {group.groupName}
-                            </div>
-                            <ul>
-                              {group.items.map((s, si) => (
-                                <li key={si}>
-                                  <Link
-                                    to={`/institutions/${encodeURIComponent(s.name)}`}
-                                    onClick={(e) => {
-                                      if (
-                                        window.location.pathname ===
-                                        `/institution/${encodeURIComponent(s.name)}`
-                                      ) {
-                                        e.preventDefault();
-                                        window.location.reload();
-                                      }
-                                      toggleMobileMenu();
-                                    }}
-                                    className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
-                                  >
-                                    {s.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </li>
-                        ))
+                        <li key={gi} className="py-1">
+                          <div className="px-5 py-2 text-sm font-semibold text-gray-800">
+                            {group.groupName}
+                          </div>
+                          <ul>
+                            {group.items.map((s, si) => (
+                              <li key={si}>
+                                <Link
+                                  to={`/institutions/${s.slug}`}
+                                  onClick={(e) => {
+                                    if (
+                                      window.location.pathname ===
+                                      `/institutions/${s.slug}`
+                                    ) {
+                                      e.preventDefault();
+                                      window.location.reload();
+                                    }
+                                    toggleMobileMenu();
+                                  }}
+                                  className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
+                                >
+                                  {s.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+                      ))
                       : item.subItems.map((subItem, subIndex) => (
-                          <li key={subIndex}>
-                            <a
-                              href={subItem.link}
-                              onClick={toggleMobileMenu}
-                              className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
-                            >
-                              {subItem.name}
-                            </a>
-                          </li>
-                        ))}
+                        <li key={subIndex}>
+                          <a
+                            href={subItem.link}
+                            onClick={toggleMobileMenu}
+                            className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
+                          >
+                            {subItem.name}
+                          </a>
+                        </li>
+                      ))}
                   </ul>
                 )}
               </li>
