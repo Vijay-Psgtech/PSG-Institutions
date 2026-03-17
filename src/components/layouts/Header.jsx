@@ -199,13 +199,11 @@ const Header = () => {
                                     <Link
                                       to={`/institutions/${s.slug}`}
                                       onClick={(e) => {
-                                        if (
-                                          window.location.pathname ===
-                                          `/institutions/${s.slug}`
-                                        ) {
-                                          e.preventDefault();
-                                          window.location.reload();
+                                       if (closeTimeoutRef.current) {
+                                          clearTimeout(closeTimeoutRef.current);
+                                          closeTimeoutRef.current = null;
                                         }
+                                        setActiveDropdown(null);
                                       }}
                                       className="block px-2 py-2 text-gray-700 text-sm hover:bg-[#0052ab]/5 hover:text-[#0052ab] rounded transition"
                                     >
