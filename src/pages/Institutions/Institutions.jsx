@@ -6,10 +6,9 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const InstitutionDetails = () => {
-  const { id } = useParams();
-  const decodedId = decodeURIComponent(id);
+  const { slug } = useParams();
 
-  const institution = institutionsData.find((inst) => inst.label === decodedId);
+  const institution = institutionsData.find((inst) => inst.slug === slug);
 
   if (!institution)
     return (
@@ -156,7 +155,7 @@ const InstitutionDetails = () => {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 text-center md:text-left">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#003d82]">Our Vision</h3>
-             <div
+            <div
               className="prose max-w-none text-gray-900 leading-relaxed prose-headings:text-[#003d82] prose-p:my-4 prose-ul:list-disc prose-ul:ml-6 prose-li:my-1 prose-img:rounded-2xl"
               dangerouslySetInnerHTML={{ __html: institution.vision }}
             ></div>

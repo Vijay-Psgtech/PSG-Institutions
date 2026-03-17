@@ -83,11 +83,10 @@ const InstitutionsSection = () => {
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`group relative px-6 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 ${
-                selectedCategory === category
+              className={`group relative px-6 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 ${selectedCategory === category
                   ? "bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white shadow-lg shadow-blue-900/30"
                   : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-[#0052ab]/30"
-              }`}
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -97,7 +96,7 @@ const InstitutionsSection = () => {
               </span>
               {selectedCategory === category && (
                 <motion.div
-                  className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#0052ab] to-[#003d82] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#0052ab] to-[#003d82] opacity-0"
                   layoutId="activeCategory"
                 />
               )}
@@ -190,21 +189,14 @@ const InstitutionCard = ({ institution, index }) => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <Link 
-            to={`institutions/${encodeURIComponent(institution.label)}`}
-            state={
-              {
-                'image': institution.image,
-                'label': institution.label,
-                'est': institution.establishment
-              }
-            }
+          <Link
+            to={`institutions/${institution.slug}`}
           >
             <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
               <ExternalLink size={18} className="text-[#003d82]" />
             </div>
           </Link>
-          
+
         </motion.div>
       </div>
 
