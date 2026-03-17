@@ -5,6 +5,7 @@ import PsgPsp from "../../assets/images/institutions/psgpsp.webp";
 import PsgHs from "../../assets/images/institutions/psghs.webp";
 import PsgPs from "../../assets/images/institutions/psgps.webp";
 import PsgMsp from "../../assets/images/institutions/psgmsp.webp";
+import PsgWs from "../../assets/images/institutions/psgws.png";
 
 {/* College & Institutes images*/}
 import PsgCas from "../../assets/images/institutions/psgcas.webp";
@@ -28,6 +29,7 @@ import psgpsplogo from "../../assets/images/logos/psgpsp-logo.png";
 import psghsvlogo from "../../assets/images/logos/psghsv-logo.png";
 import psgpslogo from "../../assets/images/logos/psgps-logo.png";
 import psgmsplogo from "../../assets/images/logos/psgmsp-logo.png";
+import psgwslogo from "../../assets/images/logos/psgws-logo.png";
 
 {/* College & Institute logo's*/}
 import psgcaslogo from "../../assets/images/logos/psgcas-logo.png";
@@ -160,6 +162,34 @@ export const institutionsData = [
     mission: "To facilitate children realize and manifest their inborn divinity in a happy and conducive environment leading to qualitative changes in their character.",
     vision: "To bring about holistic development in children by providing quality education and opportunities for self discovery of their potential.",
     tagline: "Explore –  Enrich –  Excel"
+  },
+  {
+    label: "PSG World School",
+    slug: "psg-world-school",
+    category: "School",
+    establishment: "2026",
+    image: PsgWs,
+    logo: psgwslogo,
+    webLink: "https://psgworldschool.edu.in/",
+    description: `
+      <p>
+        “Empowering Young Minds to Lead with Purpose in a Global Future” <br /><br />
+        At <strong>PSG World School</strong>, we believe education is not just about learning — it’s about becoming. As an IB World School, we nurture curiosity, creativity, and compassion, preparing every learner to thrive in the world’s best universities and, more importantly, to shape a better tomorrow. <br />
+        Rooted in the 100-year heritage of PSG Institutions, PSG World School stands as a beacon of tradition and innovation. With authorization as an IB World School, we ensure our learners experience education aligned with globally benchmarked International Baccalaureate philosophy.
+      </p>
+    `,
+    mission: "At PSG IB World School, our educational vision is rooted in six core themes that shape a transformative learning experience. Global Citizenship and International-Mindedness are central to nurturing students who are aware, empathetic, and responsible contributors to the global community. We cultivate Leadership with Purpose and Integrity, guiding learners to become ethical, principled leaders who act with vision and courage. Through a strong foundation in Academic and Personal Excellence, we promote inquiry-based learning, critical thinking, and a commitment to lifelong growth. Innovation is woven into our culture, with a focus on Innovation, Inquiry, and Creativity, encouraging students to explore, problem-solve, and thrive in a rapidly changing world. Our approach emphasizes Compassion, Ethics, and Values, instilling emotional intelligence, empathy, and a strong moral compass. Finally, we are dedicated to providing a Holistic, Empowering Learning Environment that is inclusive, student-centered, and designed to unlock each learner’s full potential while making a positive impact on the community.",
+
+    vision: `<ul>
+      <li>• We aim to empower students through holistic education, nurturing curiosity, compassion, and the courage to make a difference.</li>
+      <li>• Our mission is to cultivate reflective, open-minded, and principled learners who actively contribute to a peaceful and sustainable world. </li>
+      <li>• Through a globally relevant curriculum and value-based approach, we guide students to be confident, ethical, and lifelong learners.</li>
+      <li>• To develop well-rounded individuals through rigorous academics, creative exploration, and social responsibility.</li>
+      <li>• We inspire students to think critically, act kindly, and learn continuously—building a future grounded in empathy and innovation.</li>
+      <li>• Our school provides a safe, inclusive environment where students are encouraged to ask questions, embrace challenges, and pursue excellence.</li>
+    </ul>`,
+    tagline: "Ignite, Innovate, Inspire"
+
   },
 
   {

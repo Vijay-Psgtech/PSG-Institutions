@@ -46,6 +46,7 @@ const Header = () => {
             { name: "PSG High School, Vedapatti", slug: "psg-high-school-vedapatti" },
             { name: "PSG Public Schools", slug: "psg-public-schools" },
             { name: "PSG Matriculation School", slug: "psg-matriculation-school" },
+            { name: "PSG World School", slug: "psg-world-school" },
           ],
         },
         {
