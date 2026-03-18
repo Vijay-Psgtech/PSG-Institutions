@@ -72,10 +72,10 @@ const Header = () => {
         },
       ],
     },
-    { name: "Events", link: "events" },
-    { name: "Achievements", link: "achievements" },
-    { name: "Placements", link: "placements" },
-    { name: "Contact", link: "contact" },
+    { name: "Events", link: "/events" },
+    { name: "Achievements", link: "/achievements" },
+    { name: "Placements", link: "/placements" },
+    { name: "Contact", link: "/contact" },
   ];
 
   const toggleDropdown = (index) => {
