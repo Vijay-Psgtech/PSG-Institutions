@@ -53,6 +53,8 @@ export const events = [
 ];
 
 export const eventsData = [
+
+  //====== PSG College of technology ========= //
   {
     institution: "PSG College of Technology",
     slug: "psg-tech",
@@ -79,6 +81,8 @@ export const eventsData = [
       },
     ],
   },
+
+  //====== PSG Institute of Management ========= //
   {
     institution: "PSG Institute of Management",
     slug: "psg-im",
@@ -86,14 +90,49 @@ export const eventsData = [
     events: [
       {
         id: 1,
-        title: "Entrepreneurship Summit 2026",
-        date: "2026-05-10",
+        title: "Rapport 2026",
+        date: "24-01-2026",
         location: "Seminar Hall A",
         description:
-          "A summit for aspiring entrepreneurs with startup pitches and mentorship.",
+          "Rapport 2026 sets the stage for an evening of expert talk, music, and networking at PSGIM.",
         image: "/images/events/entrepreneurship-summit.jpg",
         link: "/events/psg-im/e-summit",
       },
     ],
   },
+
+  //====== PSG College of Arts & Science ========= //
+  {
+    institution: "PSG College of Arts & Science",
+    slug: "psg-cas",
+    logo: psgcaslogo,
+    events: [
+      {
+        id: 1,
+        title: "Technologies for Space Research",
+        date: "26-12-2025",
+        description:  "A Science Academies’ Lecture Workshop on Technologies for Space Research was organized for the UG and PG students of the Science stream by the Department of Physics (SF), PSGCAS, sponsored by the National Science Academies – IASc, INSA, and NASI, on 22/12/2025 and 23/12/2025 at Kaveri Hall, PSGCAS.",
+        image: "/images/events/entrepreneurship-summit.jpg",
+        link: "/events/psg-cas/tech-sapce-research",
+      },
+    ],
+  },
+
+  //====== PSG Institute of Technology and Applied Research ========= //
+  {
+    institution: "PSG Institute of Technology and Applied Research",
+    slug: "psg-itech",
+    logo: psgitechlogo,
+    events: [
+      {
+        id: 1,
+        title: "3rd International Conference",
+        date: "13-03-2026",
+        description:  "3rd International Conference on Materials, Design and Manufacturing for Sustainable Environment - (ICMDMSE 2026)",
+        image: "/images/events/entrepreneurship-summit.jpg",
+        link: "/events/psg-itech/3rd-international-conference",
+      },
+    ],
+  }
+
 ];
