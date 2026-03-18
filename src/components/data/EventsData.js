@@ -82,7 +82,7 @@ export const eventsData = [
   {
     institution: "PSG Institute of Management",
     slug: "psg-im",
-    logo: "/images/psgim-logo.png",
+    logo: psgimlogo,
     events: [
       {
         id: 1,
