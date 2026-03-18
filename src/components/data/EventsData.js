@@ -1,8 +1,28 @@
+{/* School logo's*/}
+import psgsjhsslogo from "../../assets/images/logos/psgsjhss-logo.png";
+import psgpsvlogo from "../../assets/images/logos/psgpsv-logo.png";
+import psgpsplogo from "../../assets/images/logos/psgpsp-logo.png";
+import psghsvlogo from "../../assets/images/logos/psghsv-logo.png";
+import psgpslogo from "../../assets/images/logos/psgps-logo.png";
+import psgmsplogo from "../../assets/images/logos/psgmsp-logo.png";
+import psgwslogo from "../../assets/images/logos/psgws-logo.png";
+
+{/* College & Institute logo's*/}
 import psgcaslogo from "../../assets/images/logos/psgcas-logo.png";
 import psgctlogo from "../../assets/images/logos/psgct-logo.png";
 import psgimlogo from "../../assets/images/logos/psgim-logo.png";
-import psgsjhsslogo from "../../assets/images/logos/psgsjhss-logo.png";
+import psgiaslogo from "../../assets/images/logos/psgias-logo.png";
 import psgitechlogo from "../../assets/images/logos/psgitech-logo.png";
+import psgiaplogo from "../../assets/images/logos/psgiap-logo.webp";
+import psgpolylogo from "../../assets/images/logos/psgpoly-logo.png";
+
+{/* Medical & Healthcare logo's */}
+import psgimsrlogo from "../../assets/images/logos/psgimsr-logo.png";
+import psgnursinglogo from "../../assets/images/logos/psgnursing-logo.png";
+import psgphysiologo from "../../assets/images/logos/psgphysio-logo.png";
+import psgpharmalogo from "../../assets/images/logos/psgpharma-logo.png"
+import { title } from "framer-motion/client";
+
 
 export const events = [
   {
@@ -91,7 +111,7 @@ export const eventsData = [
       {
         id: 1,
         title: "Rapport 2026",
-        date: "24-01-2026",
+        date: "2026-01-24",
         location: "Seminar Hall A",
         description:
           "Rapport 2026 sets the stage for an evening of expert talk, music, and networking at PSGIM.",
@@ -110,7 +130,7 @@ export const eventsData = [
       {
         id: 1,
         title: "Technologies for Space Research",
-        date: "26-12-2025",
+        date: "2025-12-25",
         description:  "A Science Academies’ Lecture Workshop on Technologies for Space Research was organized for the UG and PG students of the Science stream by the Department of Physics (SF), PSGCAS, sponsored by the National Science Academies – IASc, INSA, and NASI, on 22/12/2025 and 23/12/2025 at Kaveri Hall, PSGCAS.",
         image: "/images/events/entrepreneurship-summit.jpg",
         link: "/events/psg-cas/tech-sapce-research",
@@ -127,12 +147,30 @@ export const eventsData = [
       {
         id: 1,
         title: "3rd International Conference",
-        date: "13-03-2026",
+        date: "2026-03-13",
         description:  "3rd International Conference on Materials, Design and Manufacturing for Sustainable Environment - (ICMDMSE 2026)",
         image: "/images/events/entrepreneurship-summit.jpg",
         link: "/events/psg-itech/3rd-international-conference",
       },
     ],
+  },
+
+  //====== PSG Institute of Advanced Studies ========= //
+  {
+    institution: "PSG Institute of Advanced Studies",
+    slug: "psg-ias",
+    logo: psgiaslogo,
+    events: [
+      {
+        id: 1,
+        title: "International Conference on Sustainable Technologies for Energy and Environment",
+        date: "2025-11-27",
+        description: "PSG Institute of Advanced Studies and ECS-IITM Students Chapter, IIT Madras, are jointly organizing an International Conference on “Sustainable Technologies for Energy and Environment (ICSTEE 2025)”during November 27–29, 2025.",
+        image: "/images/events/inte-conference.jpg",
+        link: "/events/psg-ias/International-Conference"
+      }
+    ]
   }
+
 
 ];
