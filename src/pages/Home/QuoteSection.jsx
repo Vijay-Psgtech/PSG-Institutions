@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import bgImg from "../../assets/images/about/building.webp";
+import bgImg from "/images/about/building.webp";
 
 const QuoteSection = () => {
   return (
