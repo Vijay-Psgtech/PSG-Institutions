@@ -7,7 +7,7 @@ import { alumniData } from "../../components/data/AluminiData.js";
 
 const AlumniTestimonials = () => {
   return (
-   <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
+    <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <motion.div
@@ -17,10 +17,10 @@ const AlumniTestimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-xs md:text-sm font-semibold tracking-wider text-[#0052ab] bg-blue-50 rounded-full uppercase">
-                <GraduationCap size={16} />
-                Our Alumini's
-            </span>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-xs md:text-sm font-semibold tracking-wider text-[#0052ab] bg-blue-50 rounded-full uppercase">
+            <GraduationCap size={16} />
+            Our Alumini's
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#003d82] via-[#0052ab] to-[#003d82] mb-3">
             Alumni Testimonials
           </h2>

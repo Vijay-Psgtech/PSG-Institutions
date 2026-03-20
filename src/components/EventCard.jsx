@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, ArrowRight, ExternalLink, Clock } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  ArrowRight,
+  ExternalLink,
+  Clock,
+} from "lucide-react";
 
 export default function EventCard({ event, index = 0, isPast = false }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,10 +14,10 @@ export default function EventCard({ event, index = 0, isPast = false }) {
   // Format date
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      day: 'numeric', 
-      year: 'numeric' 
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
     });
   };
 
@@ -51,7 +57,7 @@ export default function EventCard({ event, index = 0, isPast = false }) {
           }}
           transition={{ duration: 0.6 }}
         />
-        
+
         {/* Image Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
@@ -94,7 +100,9 @@ export default function EventCard({ event, index = 0, isPast = false }) {
           </div>
           <div className="flex items-center gap-1.5 text-gray-600">
             <MapPin size={16} className="text-[#0052ab]" />
-            <span className="line-clamp-1">{event.location || event.institution}</span>
+            <span className="line-clamp-1">
+              {event.location || event.institution}
+            </span>
           </div>
         </div>
 
@@ -125,9 +133,9 @@ export default function EventCard({ event, index = 0, isPast = false }) {
           whileTap={{ scale: 0.98 }}
         >
           <span>{isPast ? "View Details" : "Learn More"}</span>
-          <ArrowRight 
-            size={16} 
-            className="group-hover/btn:translate-x-1 transition-transform duration-300" 
+          <ArrowRight
+            size={16}
+            className="group-hover/btn:translate-x-1 transition-transform duration-300"
           />
         </motion.a>
       </div>

@@ -31,10 +31,10 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     alert("Message sent successfully!");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     setIsSubmitting(false);
@@ -148,7 +148,8 @@ export default function Contact() {
             </h1>
 
             <p className="text-lg md:text-xl text-cyan-100 max-w-2xl mx-auto">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We'd love to hear from you. Send us a message and
+              we'll respond as soon as possible.
             </p>
           </motion.div>
         </div>
@@ -180,8 +181,12 @@ export default function Contact() {
                 >
                   <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
-                <p className="text-gray-700 font-medium text-sm mb-1">{info.content}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {info.title}
+                </h3>
+                <p className="text-gray-700 font-medium text-sm mb-1">
+                  {info.content}
+                </p>
                 <p className="text-gray-500 text-xs">{info.subContent}</p>
               </motion.div>
             );
@@ -203,8 +208,12 @@ export default function Contact() {
                 <Send className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Send a Message</h2>
-                <p className="text-gray-600 text-sm">We'll get back to you within 24 hours</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                  Send a Message
+                </h2>
+                <p className="text-gray-600 text-sm">
+                  We'll get back to you within 24 hours
+                </p>
               </div>
             </div>
 
@@ -316,7 +325,11 @@ export default function Contact() {
                   <>
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                       className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                     />
                     <span>Sending...</span>
@@ -368,7 +381,9 @@ export default function Contact() {
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-semibold">Call Now</p>
-                    <p className="text-sm text-cyan-100">0422 257 2265 / 434 4000</p>
+                    <p className="text-sm text-cyan-100">
+                      0422 257 2265 / 434 4000
+                    </p>
                   </div>
                 </a>
                 <a
@@ -410,7 +425,8 @@ export default function Contact() {
             Connect With Us
           </h2>
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-            Follow us on social media for updates, events, and news from PSG Institutions
+            Follow us on social media for updates, events, and news from PSG
+            Institutions
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -432,7 +448,7 @@ export default function Contact() {
                   aria-label={social.name}
                 >
                   <Icon className="w-7 h-7 md:w-8 md:h-8 relative z-10" />
-                  
+
                   {/* Tooltip */}
                   <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                     {social.name}

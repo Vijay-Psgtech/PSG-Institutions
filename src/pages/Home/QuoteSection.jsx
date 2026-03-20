@@ -26,16 +26,15 @@ const QuoteSection = () => {
           <Quote className="w-12 h-12 mx-auto text-blue-400 opacity-70 mb-6" />
 
           <p className="text-xl sm:text-2xl md:text-3xl italic font-bold leading-relaxed text-gray-100">
-            “Let there be charity so that others can share my family's prosperity.”
+            “Let there be charity so that others can share my family's
+            prosperity.”
           </p>
 
           <div className="mt-6">
             <h3 className="text-lg sm:text-xl font-bold text-blue-400">
               Shri P S Govindaswamy Naidu
             </h3>
-            <p className="text-gray-300 text-md mt-1 tracking-wide">
-              Founder
-            </p>
+            <p className="text-gray-300 text-md mt-1 tracking-wide">Founder</p>
           </div>
         </motion.div>
       </div>

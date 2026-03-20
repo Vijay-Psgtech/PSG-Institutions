@@ -1,27 +1,36 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
+import React from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  ArrowRight,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', link: '#home' },
-    { name: 'About Us', link: '#about' },
-    { name: 'Institutions', link: '#institutions' },
-    { name: 'Events', link: '#events' },
-    { name: 'Achievements', link: '#achievements' },
-    { name: 'Placements', link: '#placements' },
-    { name: 'Contact', link: '#contact' },
-    { name: 'Admissions', link: '#admissions' }
+    { name: "Home", link: "#home" },
+    { name: "About Us", link: "#about" },
+    { name: "Institutions", link: "#institutions" },
+    { name: "Events", link: "#events" },
+    { name: "Achievements", link: "#achievements" },
+    { name: "Placements", link: "#placements" },
+    { name: "Contact", link: "#contact" },
+    { name: "Admissions", link: "#admissions" },
   ];
 
   const programs = [
-    { name: 'Engineering', link: '#engineering' },
-    { name: 'Technology', link: '#technology' },
-    { name: 'Arts & Science', link: '#arts-science' },
-    { name: 'Management', link: '#management' },
-    { name: 'Polytechnic', link: '#polytechnic' },
-    { name: 'Research Programs', link: '#research' }
+    { name: "Engineering", link: "#engineering" },
+    { name: "Technology", link: "#technology" },
+    { name: "Arts & Science", link: "#arts-science" },
+    { name: "Management", link: "#management" },
+    { name: "Polytechnic", link: "#polytechnic" },
+    { name: "Research Programs", link: "#research" },
   ];
 
   return (
@@ -34,11 +43,11 @@ const Footer = () => {
             <div className="space-y-6">
               <a href="#home" className="flex items-center gap-3 group">
                 {/* Logo Image */}
-                <img 
-                  src="/logo.png" 
-                  alt="PSG Institutions Logo" 
+                <img
+                  src="/logo.png"
+                  alt="PSG Institutions Logo"
                   className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  loading='lazy'
+                  loading="lazy"
                 />
                 {/* Logo Text */}
                 <div className="flex flex-col">
@@ -51,23 +60,33 @@ const Footer = () => {
                 </div>
               </a>
               <p className="text-white/80 text-sm leading-relaxed">
-                A premier educational institution committed to excellence in education, 
-                research, and innovation since 1926. Shaping future leaders and professionals.
+                A premier educational institution committed to excellence in
+                education, research, and innovation since 1926. Shaping future
+                leaders and professionals.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-2.5 text-white/80 text-sm">
-                  <MapPin size={18} className="flex-shrink-0 mt-0.5 text-yellow-400" />
+                  <MapPin
+                    size={18}
+                    className="flex-shrink-0 mt-0.5 text-yellow-400"
+                  />
                   <span>Coimbatore, Tamil Nadu, India</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-white/80 text-sm">
                   <Phone size={18} className="flex-shrink-0 text-yellow-400" />
-                  <a href="tel:+919876543210" className="hover:text-yellow-300 transition-colors duration-300">
+                  <a
+                    href="tel:+919876543210"
+                    className="hover:text-yellow-300 transition-colors duration-300"
+                  >
                     98765 43210
                   </a>
                 </div>
                 <div className="flex items-center gap-2.5 text-white/80 text-sm">
                   <Mail size={18} className="flex-shrink-0 text-yellow-400" />
-                  <a href="mailto:info@psginstitutions.in" className="hover:text-yellow-300 transition-colors duration-300">
+                  <a
+                    href="mailto:info@psginstitutions.in"
+                    className="hover:text-yellow-300 transition-colors duration-300"
+                  >
                     info@psginstitutions.in
                   </a>
                 </div>
@@ -87,7 +106,10 @@ const Footer = () => {
                       href={link.link}
                       className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group"
                     >
-                      <ArrowRight size={16} className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight
+                        size={16}
+                        className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300"
+                      />
                       {link.name}
                     </a>
                   </li>
@@ -108,7 +130,10 @@ const Footer = () => {
                       href={program.link}
                       className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group"
                     >
-                      <ArrowRight size={16} className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight
+                        size={16}
+                        className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300"
+                      />
                       {program.name}
                     </a>
                   </li>
@@ -125,7 +150,7 @@ const Footer = () => {
               <p className="text-white/80 text-sm leading-relaxed">
                 Stay updated with our latest news, events, and announcements.
               </p>
-              
+
               {/* Social Links */}
               <div className="flex gap-3">
                 <a
@@ -197,15 +222,24 @@ const Footer = () => {
               &copy; {currentYear} PSG Institutions. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-white/70">
-              <a href="#privacy" className="hover:text-yellow-300 transition-colors duration-300">
+              <a
+                href="#privacy"
+                className="hover:text-yellow-300 transition-colors duration-300"
+              >
                 Privacy Policy
               </a>
               <span className="text-white/30">|</span>
-              <a href="#terms" className="hover:text-yellow-300 transition-colors duration-300">
+              <a
+                href="#terms"
+                className="hover:text-yellow-300 transition-colors duration-300"
+              >
                 Terms of Service
               </a>
               <span className="text-white/30">|</span>
-              <a href="#sitemap" className="hover:text-yellow-300 transition-colors duration-300">
+              <a
+                href="#sitemap"
+                className="hover:text-yellow-300 transition-colors duration-300"
+              >
                 Sitemap
               </a>
             </div>
