@@ -49,22 +49,22 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "PSG Institutions, Avinashi Road",
-      subContent: "Coimbatore, Tamil Nadu - 641004, India",
+      content: "PSG Institutions",
+      subContent: "PO Box No: 1609, Peelamedu, Coimbatore - 641 004",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+91 98765 43210",
-      subContent: "+91 422 2572177",
+      content: "+0422 257 2265 ",
+      subContent: "+0422 434 4000",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@psginstitutions.in",
-      subContent: "admissions@psginstitutions.in",
+      content: "charity@psgtech.edu",
+      subContent: "info@psginstitutions.in",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -81,35 +81,35 @@ export default function Contact() {
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://facebook.com/psginstitutions",
+      url: "https://www.facebook.com/psgandsonscharities",
       color: "hover:bg-blue-600",
       bgColor: "bg-blue-500",
     },
     {
       name: "Twitter",
       icon: Twitter,
-      url: "https://twitter.com/psginstitutions",
+      url: "https://twitter.com/",
       color: "hover:bg-sky-500",
       bgColor: "bg-sky-400",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/company/psginstitutions",
+      url: "https://www.linkedin.com/company/psgandsonscharities/",
       color: "hover:bg-blue-700",
       bgColor: "bg-blue-600",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/psginstitutions",
+      url: "https://instagram.com/",
       color: "hover:bg-pink-600",
       bgColor: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500",
     },
     {
       name: "YouTube",
       icon: Youtube,
-      url: "https://youtube.com/@psginstitutions",
+      url: "https://www.youtube.com/@PSGandSonsCharities",
       color: "hover:bg-red-600",
       bgColor: "bg-red-500",
     },
@@ -345,7 +345,7 @@ export default function Contact() {
               <div className="h-[400px] relative">
                 <iframe
                   title="PSG Institutions Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2524!2d77.0074!3d11.0254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8582f1435fd7f%3A0x2045c9e5b8e2f23e!2sPSG%20College%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.202242938174!2d77.00041502498154!3d11.023447554588905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8582f11555555%3A0x51ff199fa3d30ddf!2sPSG%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1773985099486!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -354,11 +354,6 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="grayscale hover:grayscale-0 transition-all duration-500"
                 />
-                {/* Map Overlay Badge */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-[#0052ab]" />
-                  <span className="font-semibold text-gray-800">Coimbatore, India</span>
-                </div>
               </div>
             </div>
 
@@ -373,21 +368,21 @@ export default function Contact() {
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-semibold">Call Now</p>
-                    <p className="text-sm text-cyan-100">+91 98765 43210</p>
+                    <p className="text-sm text-cyan-100">0422 257 2265 / 434 4000</p>
                   </div>
                 </a>
                 <a
-                  href="mailto:info@psginstitutions.in"
+                  href="mailto:charity@psgtech.edu"
                   className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all group"
                 >
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-semibold">Email Us</p>
-                    <p className="text-sm text-cyan-100">info@psginstitutions.in</p>
+                    <p className="text-sm text-cyan-100">charity@psgtech.edu</p>
                   </div>
                 </a>
                 <a
-                  href="https://maps.google.com"
+                  href="https://www.google.com/maps/place/PSG+Group+of+Institutions/@11.0248086,77.0028263,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba8582f11555555:0x51ff199fa3d30ddf!8m2!3d11.0248086!4d77.0028263!16s%2Fg%2F11gdkx1m56?hl=en&entry=ttu&g_ep=EgoyMDI2MDMxNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all group"
