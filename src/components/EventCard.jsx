@@ -77,6 +77,8 @@ export default function EventCard({ event, index = 0, isPast = false }) {
               src={event.logo}
               alt={event.institution}
               className="w-full h-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
