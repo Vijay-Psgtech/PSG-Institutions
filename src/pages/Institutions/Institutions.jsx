@@ -38,6 +38,7 @@ const InstitutionDetails = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              loading="lazy"
             />
           )}
 
