@@ -1,6 +1,14 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Calendar, MapPin, Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Search,
+  Calendar,
+  MapPin,
+  Filter,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { eventsData } from "../../components/data/EventsData";
 import EventCard from "../../components/EventCard";
 
@@ -11,7 +19,7 @@ export default function Events() {
   const [selectedInstitution, setSelectedInstitution] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [showFilters, setShowFilters] = useState(false);
-  const [activeTab, setActiveTab] = useState("upcoming"); // "upcoming" | "past" | "all"
+  const [activeTab, setActiveTab] = useState("all"); // "upcoming" | "past" | "all"
 
   const today = new Date();
 
@@ -51,14 +59,16 @@ export default function Events() {
   }, [search, selectedInstitution, allEvents, activeTab]);
 
   // Count events for tabs
-  const upcomingCount = allEvents.filter((e) => new Date(e.date) >= today).length;
+  const upcomingCount = allEvents.filter(
+    (e) => new Date(e.date) >= today,
+  ).length;
   const pastCount = allEvents.filter((e) => new Date(e.date) < today).length;
 
   // Pagination
   const totalPages = Math.ceil(filteredEvents.length / ITEMS_PER_PAGE);
   const paginatedEvents = filteredEvents.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    currentPage * ITEMS_PER_PAGE,
   );
 
   // Reset to page 1 when filters change
@@ -82,7 +92,8 @@ export default function Events() {
     setActiveTab("all");
   };
 
-  const hasActiveFilters = search !== "" || selectedInstitution !== "all" || activeTab !== "all";
+  const hasActiveFilters =
+    search !== "" || selectedInstitution !== "all" || activeTab !== "all";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
@@ -97,7 +108,7 @@ export default function Events() {
             }}
           />
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,13 +122,14 @@ export default function Events() {
                 Events & Workshops
               </span>
             </div>
-            
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
               Discover Upcoming Events
             </h1>
-            
+
             <p className="text-lg md:text-xl text-cyan-100 max-w-2xl mx-auto">
-              Stay updated with latest events, workshops, and seminars across PSG Institutions
+              Stay updated with latest events, workshops, and seminars across
+              PSG Institutions
             </p>
 
             <div className="mt-6 flex justify-center gap-4 text-white/80 text-sm">
@@ -149,7 +161,9 @@ export default function Events() {
           >
             <span className="flex items-center gap-2 font-semibold text-gray-700">
               <Filter size={20} />
-              Filters {hasActiveFilters && `(${search ? 1 : 0 + (selectedInstitution !== "all" ? 1 : 0)})`}
+              Filters{" "}
+              {hasActiveFilters &&
+                `(${search ? 1 : 0 + (selectedInstitution !== "all" ? 1 : 0)})`}
             </span>
             <motion.div animate={{ rotate: showFilters ? 180 : 0 }}>
               <ChevronLeft size={20} className="transform rotate-90" />
@@ -157,7 +171,7 @@ export default function Events() {
           </button>
 
           {/* Filters Content */}
-          <div className={`${showFilters ? 'block' : 'hidden'} lg:block`}>
+          <div className={`${showFilters ? "block" : "hidden"} lg:block`}>
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
               <div className="flex flex-col lg:flex-row gap-4">
                 {/* Search Bar */}
@@ -235,9 +249,11 @@ export default function Events() {
               }`}
             >
               {tab.label}
-              <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
-                activeTab === tab.id ? "bg-white/20" : "bg-gray-100"
-              }`}>
+              <span
+                className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
+                  activeTab === tab.id ? "bg-white/20" : "bg-gray-100"
+                }`}
+              >
                 {tab.count}
               </span>
             </button>
@@ -247,8 +263,15 @@ export default function Events() {
         {/* Results Count */}
         <div className="mb-6 flex items-center justify-between">
           <p className="text-gray-600">
-            Showing <span className="font-semibold text-gray-900">{paginatedEvents.length}</span> of{" "}
-            <span className="font-semibold text-gray-900">{filteredEvents.length}</span> events
+            Showing{" "}
+            <span className="font-semibold text-gray-900">
+              {paginatedEvents.length}
+            </span>{" "}
+            of{" "}
+            <span className="font-semibold text-gray-900">
+              {filteredEvents.length}
+            </span>{" "}
+            events
           </p>
           {totalPages > 1 && (
             <p className="text-sm text-gray-500">
@@ -268,8 +291,12 @@ export default function Events() {
               className="text-center py-20"
             >
               <Calendar size={64} className="mx-auto text-gray-300 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-600 mb-2">No events found</h3>
-              <p className="text-gray-500 mb-6">Try adjusting your filters or search terms</p>
+              <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                No events found
+              </h3>
+              <p className="text-gray-500 mb-6">
+                Try adjusting your filters or search terms
+              </p>
               {hasActiveFilters && (
                 <button
                   onClick={clearFilters}
@@ -321,35 +348,43 @@ export default function Events() {
 
             {/* Page Numbers */}
             <div className="flex gap-2">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                // Show first, last, current, and adjacent pages
-                if (
-                  page === 1 ||
-                  page === totalPages ||
-                  (page >= currentPage - 1 && page <= currentPage + 1)
-                ) {
-                  return (
-                    <button
-                      key={page}
-                      onClick={() => setCurrentPage(page)}
-                      className={`w-10 h-10 rounded-xl font-semibold transition-all ${
-                        currentPage === page
-                          ? "bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white shadow-lg"
-                          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50"
-                      }`}
-                    >
-                      {page}
-                    </button>
-                  );
-                } else if (page === currentPage - 2 || page === currentPage + 2) {
-                  return (
-                    <span key={page} className="w-10 h-10 flex items-center justify-center text-gray-400">
-                      •••
-                    </span>
-                  );
-                }
-                return null;
-              })}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => {
+                  // Show first, last, current, and adjacent pages
+                  if (
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  ) {
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => setCurrentPage(page)}
+                        className={`w-10 h-10 rounded-xl font-semibold transition-all ${
+                          currentPage === page
+                            ? "bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white shadow-lg"
+                            : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50"
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  } else if (
+                    page === currentPage - 2 ||
+                    page === currentPage + 2
+                  ) {
+                    return (
+                      <span
+                        key={page}
+                        className="w-10 h-10 flex items-center justify-center text-gray-400"
+                      >
+                        •••
+                      </span>
+                    );
+                  }
+                  return null;
+                },
+              )}
             </div>
 
             {/* Next Button */}
