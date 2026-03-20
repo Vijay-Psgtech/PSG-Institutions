@@ -1,5 +1,5 @@
 import React from "react";
-import trusteeImg from "../../assets/images/trustee/truste.jpg";
+import trusteeImg from "/images/trustee/truste.jpg";
 import { motion } from "framer-motion";
 
 const TrusteeSection = () => {

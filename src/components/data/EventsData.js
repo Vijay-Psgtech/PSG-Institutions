@@ -1,32 +1,32 @@
 {
   /* School logo's*/
 }
-import psgsjhsslogo from "../../assets/images/logos/psgsjhss-logo.png";
-import psgpsvlogo from "../../assets/images/logos/psgpsv-logo.png";
-import psgpsplogo from "../../assets/images/logos/psgpsp-logo.png";
-import psghsvlogo from "../../assets/images/logos/psghsv-logo.png";
-import psgpslogo from "../../assets/images/logos/psgps-logo.png";
-import psgmsplogo from "../../assets/images/logos/psgmsp-logo.png";
-import psgwslogo from "../../assets/images/logos/psgws-logo.png";
+import psgsjhsslogo from "/images/logos/psgsjhss-logo.png";
+import psgpsvlogo from "/images/logos/psgpsv-logo.png";
+import psgpsplogo from "/images/logos/psgpsp-logo.png";
+import psghsvlogo from "/images/logos/psghsv-logo.png";
+import psgpslogo from "/images/logos/psgps-logo.png";
+import psgmsplogo from "/images/logos/psgmsp-logo.png";
+import psgwslogo from "/images/logos/psgws-logo.png";
 
 {
   /* College & Institute logo's*/
 }
-import psgcaslogo from "../../assets/images/logos/psgcas-logo.png";
-import psgctlogo from "../../assets/images/logos/psgct-logo.png";
-import psgimlogo from "../../assets/images/logos/psgim-logo.png";
-import psgiaslogo from "../../assets/images/logos/psgias-logo.png";
-import psgitechlogo from "../../assets/images/logos/psgitech-logo.png";
-import psgiaplogo from "../../assets/images/logos/psgiap-logo.webp";
-import psgpolylogo from "../../assets/images/logos/psgpoly-logo.png";
+import psgcaslogo from "/images/logos/psgcas-logo.png";
+import psgctlogo from "/images/logos/psgct-logo.png";
+import psgimlogo from "/images/logos/psgim-logo.png";
+import psgiaslogo from "/images/logos/psgias-logo.png";
+import psgitechlogo from "/images/logos/psgitech-logo.png";
+import psgiaplogo from "/images/logos/psgiap-logo.webp";
+import psgpolylogo from "/images/logos/psgpoly-logo.png";
 
 {
   /* Medical & Healthcare logo's */
 }
-import psgimsrlogo from "../../assets/images/logos/psgimsr-logo.png";
-import psgnursinglogo from "../../assets/images/logos/psgnursing-logo.png";
-import psgphysiologo from "../../assets/images/logos/psgphysio-logo.png";
-import psgpharmalogo from "../../assets/images/logos/psgpharma-logo.png";
+import psgimsrlogo from "/images/logos/psgimsr-logo.png";
+import psgnursinglogo from "/images/logos/psgnursing-logo.png";
+import psgphysiologo from "/images/logos/psgphysio-logo.png";
+import psgpharmalogo from "/images/logos/psgpharma-logo.png";
 
 export const events = [
   {
