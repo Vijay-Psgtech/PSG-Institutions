@@ -9,6 +9,7 @@ import Loader from "./components/Loader";
 const HomePage = lazy(() => import("./components/HomePage"));
 const Institutions = lazy(() => import("./pages/Institutions/Institutions"));
 const Events = lazy(() => import("./pages/Events/Events"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/institutions/:slug" element={<Institutions />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
       </Suspense>
