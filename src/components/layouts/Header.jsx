@@ -30,7 +30,7 @@ const Header = () => {
     {
       name: "About",
       subItems: [
-        { name: "Our History", link: "/history" },
+        { name: "About Us", link: "/about" },
         { name: "Vision & Mission", link: "#vision" },
       ],
     },
