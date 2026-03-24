@@ -10,8 +10,9 @@ const HomePage = lazy(() => import("./components/HomePage"));
 const About = lazy(() => import("./pages/About/About"));
 const Institutions = lazy(() => import("./pages/Institutions/Institutions"));
 const Events = lazy(() => import("./pages/Events/Events"));
-const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Achievements = lazy(() => import("./pages/Achievements/Achievements"));
 const Placements = lazy(() => import("./pages/Placements/Placements"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 function App() {
   return (
@@ -34,8 +35,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/institutions/:slug" element={<Institutions />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/achievements" element={<Achievements />} />
             <Route path="/placements" element={<Placements />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
       </Suspense>
