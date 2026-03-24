@@ -38,7 +38,7 @@ import psgimlogo from "/images/logos/psgim-logo.png";
 import psgiaslogo from "/images/logos/psgias-logo.png";
 import psgitechlogo from "/images/logos/psgitech-logo.png";
 import psgiaplogo from "/images/logos/psgiap-logo.webp";
-import psgpolylogo from "/images/logos/psgpoly-logo.png";
+import psgptclogo from "/images/logos/psgptc-logo.png";
 
 {/* Medical & Healthcare logo's */}
 import psgimsrlogo from "/images/logos/psgimsr-logo.png";
@@ -359,7 +359,7 @@ export const institutionsData = [
     category: "College",
     establishment: "1939",
     image: PsgPolyTech,
-    logo: psgpolylogo,
+    logo: psgptclogo,
     webLink: "https://www.psgpolytech.ac.in/",
     description: `
       <p>
