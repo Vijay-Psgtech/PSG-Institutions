@@ -1,7 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Heart, Users, Calendar, TrendingUp, Sparkles, Building2 } from "lucide-react";
-import { ABOUT_IMG, ABOUT_CONTENT, Stats, milestones } from "../../components/data/AboutPageData";
+import {
+  Award,
+  Heart,
+  Users,
+  Calendar,
+  TrendingUp,
+  Sparkles,
+  Building2,
+} from "lucide-react";
+import {
+  ABOUT_IMG,
+  ABOUT_CONTENT,
+  Stats,
+  milestones,
+} from "../../components/data/AboutPageData";
 
 export default function About() {
   return (
@@ -37,7 +50,8 @@ export default function About() {
             </h1>
 
             <p className="text-lg md:text-xl text-cyan-100 max-w-3xl mx-auto">
-              A century of excellence in education, healthcare, and industrial development
+              A century of excellence in education, healthcare, and industrial
+              development
             </p>
           </motion.div>
         </div>
@@ -47,10 +61,10 @@ export default function About() {
         {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: -4 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="-mt-12 mb-16"
+          className="-mt-8 mb-16"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {Stats.map((stat, index) => (
@@ -64,7 +78,7 @@ export default function About() {
                 className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 text-center group hover:shadow-2xl transition-all duration-300"
               >
                 <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-[#003d82] to-[#0052ab] bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}+
+                  {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-gray-600 font-medium">
                   {stat.label}
@@ -99,7 +113,7 @@ export default function About() {
                 />
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                
+
                 {/* Floating Badge */}
                 <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                   <div className="flex items-center gap-3">
@@ -107,8 +121,12 @@ export default function About() {
                       <Award className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <p className="text-2xl font-extrabold text-gray-900">1926</p>
-                      <p className="text-sm text-gray-600 font-medium">Established</p>
+                      <p className="text-2xl font-extrabold text-gray-900">
+                        1926
+                      </p>
+                      <p className="text-sm text-gray-600 font-medium">
+                        Established
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -141,9 +159,9 @@ export default function About() {
                 </span>
               </h2>
 
-              <div 
+              <div
                 className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4"
-                dangerouslySetInnerHTML={{ __html: ABOUT_CONTENT[0] }}
+                dangerouslySetInnerHTML={{ __html: ABOUT_CONTENT }}
               />
 
               {/* Key Highlights */}
@@ -151,12 +169,16 @@ export default function About() {
                 <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-5 border border-blue-100">
                   <Users className="w-8 h-8 text-[#0052ab] mb-2" />
                   <p className="text-2xl font-bold text-gray-900">4</p>
-                  <p className="text-sm text-gray-600 font-medium">Visionary Founders</p>
+                  <p className="text-sm text-gray-600 font-medium">
+                    Visionary Founders
+                  </p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
                   <Calendar className="w-8 h-8 text-purple-600 mb-2" />
                   <p className="text-2xl font-bold text-gray-900">₹2.01L</p>
-                  <p className="text-sm text-gray-600 font-medium">Initial Endowment</p>
+                  <p className="text-sm text-gray-600 font-medium">
+                    Initial Endowment
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -182,8 +204,8 @@ export default function About() {
               Milestones & Institutions
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From a single school to a network of {milestones.length} institutions spanning education, 
-              healthcare, and technology
+              From a single school to a network of {milestones.length}{" "}
+              institutions spanning education, healthcare, and technology
             </p>
           </div>
 
@@ -205,13 +227,17 @@ export default function About() {
                   }`}
                 >
                   {/* Content */}
-                  <div className={`${index % 2 === 0 ? "lg:text-right" : "lg:text-left lg:col-start-2"}`}>
+                  <div
+                    className={`${index % 2 === 0 ? "lg:text-right" : "lg:text-left lg:col-start-2"}`}
+                  >
                     <motion.div
                       whileHover={{ scale: 1.02, y: -4 }}
                       className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
                     >
                       {/* Institution Logo */}
-                      <div className={`flex items-start gap-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
+                      <div
+                        className={`flex items-start gap-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
+                      >
                         <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 border border-gray-200 group-hover:border-[#0052ab] transition-colors">
                           <img
                             src={milestone.logo}
@@ -220,13 +246,17 @@ export default function About() {
                           />
                         </div>
                         <div className="flex-1">
-                          <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "lg:flex-row-reverse lg:justify-end" : ""}`}>
+                          <div
+                            className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "lg:flex-row-reverse lg:justify-end" : ""}`}
+                          >
                             <span className="px-3 py-1 bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white text-xs font-bold rounded-full">
                               {milestone.est}
                             </span>
                             <TrendingUp className="w-4 h-4 text-[#0052ab]" />
                           </div>
-                          <h3 className={`text-lg md:text-xl font-bold text-gray-900 group-hover:text-[#0052ab] transition-colors ${index % 2 === 0 ? "lg:text-right" : ""}`}>
+                          <h3
+                            className={`text-lg md:text-xl font-bold text-gray-900 group-hover:text-[#0052ab] transition-colors ${index % 2 === 0 ? "lg:text-right" : ""}`}
+                          >
                             {milestone.label}
                           </h3>
                         </div>
@@ -252,7 +282,9 @@ export default function About() {
                   </div>
 
                   {/* Empty column for alternating layout */}
-                  <div className={`hidden lg:block ${index % 2 === 0 ? "" : "lg:col-start-1"}`}></div>
+                  <div
+                    className={`hidden lg:block ${index % 2 === 0 ? "" : "lg:col-start-1"}`}
+                  ></div>
                 </motion.div>
               ))}
             </div>
@@ -285,9 +317,10 @@ export default function About() {
                 Commitment to Excellence
               </h2>
               <p className="text-lg md:text-xl text-cyan-100 leading-relaxed mb-8">
-                From our humble beginnings with a ₹2.01 lakh endowment in 1926, PSG Institutions 
-                has grown into a beacon of educational excellence. Our founders' vision of creating 
-                accessible, quality education for all continues to guide us as we touch countless 
+                From our humble beginnings with a ₹2.01 lakh endowment in 1926,
+                PSG Institutions has grown into a beacon of educational
+                excellence. Our founders' vision of creating accessible, quality
+                education for all continues to guide us as we touch countless
                 lives across generations.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

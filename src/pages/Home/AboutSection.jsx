@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden">
+    <section id="about" className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl"></div>

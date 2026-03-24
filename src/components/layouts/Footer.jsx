@@ -21,16 +21,15 @@ const Footer = () => {
     { name: "Achievements", link: "#achievements" },
     { name: "Placements", link: "#placements" },
     { name: "Contact", link: "#contact" },
-    { name: "Admissions", link: "#admissions" },
   ];
 
   const programs = [
-    { name: "Engineering", link: "#engineering" },
-    { name: "Technology", link: "#technology" },
-    { name: "Arts & Science", link: "#arts-science" },
-    { name: "Management", link: "#management" },
-    { name: "Polytechnic", link: "#polytechnic" },
-    { name: "Research Programs", link: "#research" },
+    { name: "Engineering" },
+    { name: "Technology" },
+    { name: "Arts & Science" },
+    { name: "Management" },
+    { name: "Polytechnic" },
+    { name: "Research Programs" },
   ];
 
   return (
@@ -126,16 +125,13 @@ const Footer = () => {
               <ul className="space-y-3">
                 {programs.map((program, index) => (
                   <li key={index}>
-                    <a
-                      href={program.link}
-                      className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group"
-                    >
+                    <p className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group">
                       <ArrowRight
                         size={16}
                         className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300"
                       />
                       {program.name}
-                    </a>
+                    </p>
                   </li>
                 ))}
               </ul>

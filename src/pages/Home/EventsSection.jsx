@@ -18,7 +18,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section id="events" className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
       {/* Background Decorative Elements - PSG Brand Colors */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-0 w-96 h-96 bg-[#003d82]/10 rounded-full blur-3xl"></div>
