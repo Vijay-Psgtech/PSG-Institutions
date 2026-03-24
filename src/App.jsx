@@ -11,6 +11,7 @@ const About = lazy(() => import("./pages/About/About"));
 const Institutions = lazy(() => import("./pages/Institutions/Institutions"));
 const Events = lazy(() => import("./pages/Events/Events"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Placements = lazy(() => import("./pages/Placements/Placements"));
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/institutions/:slug" element={<Institutions />} />
             <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/placements" element={<Placements />} />
           </Route>
         </Routes>
       </Suspense>
