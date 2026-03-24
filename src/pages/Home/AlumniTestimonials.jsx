@@ -7,7 +7,7 @@ import { alumniData } from "../../components/data/AluminiData.js";
 
 const AlumniTestimonials = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
+    <section id="testimonials" className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <motion.div

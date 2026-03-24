@@ -4,7 +4,7 @@ import psgimlogo from "/images/logos/psgim-logo.png";
 import psgiaslogo from "/images/logos/psgias-logo.png";
 import psgitechlogo from "/images/logos/psgitech-logo.png";
 import psgiaplogo from "/images/logos/psgiap-logo.webp";
-import psgpolylogo from "/images/logos/psgpoly-logo.png";
+import psgptclogo from "/images/logos/psgptc-logo.png";
 
 import psgimsrlogo from "/images/logos/psgimsr-logo.png";
 import psgnursinglogo from "/images/logos/psgnursing-logo.png";

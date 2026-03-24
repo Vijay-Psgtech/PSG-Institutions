@@ -18,7 +18,7 @@ import psgimlogo from "/images/logos/psgim-logo.png";
 import psgiaslogo from "/images/logos/psgias-logo.png";
 import psgitechlogo from "/images/logos/psgitech-logo.png";
 import psgiaplogo from "/images/logos/psgiap-logo.webp";
-import psgpolylogo from "/images/logos/psgpoly-logo.png";
+import psgptclogo from "/images/logos/psgptc-logo.png";
 
 {
   /* Medical & Healthcare logo's */
@@ -68,7 +68,7 @@ export const milestones = [
   },
   {
     label: "PSG Polytechnic College",
-    logo: psgpolylogo,
+    logo: psgptclogo,
     est: "1939",
   },
   {
