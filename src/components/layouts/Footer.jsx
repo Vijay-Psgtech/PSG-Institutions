@@ -18,9 +18,8 @@ const Footer = () => {
     { name: "About Us", link: "#about" },
     { name: "Institutions", link: "#institutions" },
     { name: "Events", link: "#events" },
-    { name: "Achievements", link: "#achievements" },
+    { name: "Testimonials", link: "#testimonials" },
     { name: "Placements", link: "#placements" },
-    { name: "Contact", link: "#contact" },
   ];
 
   const programs = [
@@ -103,6 +102,14 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.link}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const targetId = link.link.slice(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                          targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
                       className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group"
                     >
                       <ArrowRight

@@ -7,7 +7,7 @@ import { recruitesLogo } from "../../components/data/RecruitersData";
 
 const Recruiters = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative">
+    <section id="placements" className="py-16 md:py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
