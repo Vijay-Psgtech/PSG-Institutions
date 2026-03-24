@@ -27,13 +27,14 @@ const Header = () => {
 
   const menuItems = [
     { name: "Home", link: "/" },
-    {
-      name: "About",
-      subItems: [
-        { name: "About Us", link: "/about" },
-        { name: "Vision & Mission", link: "#vision" },
-      ],
-    },
+    { name: "About Us", link: "/about" },
+    // {
+    //   name: "About",
+    //   subItems: [
+    //     { name: "About Us", link: "/about" },
+    //     { name: "Vision & Mission", link: "#vision" },
+    //   ],
+    // },
     {
       name: "Institutions",
       subItems: [

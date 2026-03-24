@@ -30,8 +30,7 @@ import psgpharmalogo from "/images/logos/psgpharma-logo.png";
 
 export const ABOUT_IMG = "/images/about/about1.webp";
 
-export const ABOUT_CONTENT = [
-  `A Legacy of Excellence & Service 
+export const ABOUT_CONTENT = `A Legacy of Excellence & Service 
     <br />
     Established in 1926 as PSG & Sons' Charities by the four visionary sons of P.S. Govindasamy Naidu.
     <br />
@@ -40,8 +39,7 @@ export const ABOUT_CONTENT = [
     In an extraordinary act of philanthropy, the four brothers voluntarily divided their ancestral properties into five parts, reserving one-fifth (amounting to ₹2.01 lakhs) to create this charitable trust.
     <br />
     From these humble yet determined beginnings, the trust has grown to establish a diverse array of educational institutions, healthcare facilities, and industrial institutes, touching countless lives across generations.
-    `,
-];
+    `;
 
 export const Stats = [
   {
