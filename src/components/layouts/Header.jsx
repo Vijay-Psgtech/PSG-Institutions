@@ -28,13 +28,6 @@ const Header = () => {
   const menuItems = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/about" },
-    // {
-    //   name: "About",
-    //   subItems: [
-    //     { name: "About Us", link: "/about" },
-    //     { name: "Vision & Mission", link: "#vision" },
-    //   ],
-    // },
     {
       name: "Institutions",
       subItems: [
@@ -116,6 +109,14 @@ const Header = () => {
             },
           ],
         },
+      ],
+    },
+    {
+      name: "Alumni",
+      subItems: [
+        { name: "PSG Arts Alumni Association", link: "http://localhost:5173/" },
+        { name: "PSG Tech Alumni Association", link: "/psgtechalumni.in" },
+        { name: "PSG iTech Alumni Association", link: "/psgtechalumni.in" },
       ],
     },
     { name: "Events", link: "/events" },
@@ -227,7 +228,7 @@ const Header = () => {
                           closeTimeoutRef.current = null;
                         }, 150);
                       }}
-                      className={`absolute top-full left-0 mt-1 z-50 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 ${item.name === "Institutions" ? "w-180" : "w-50"} transition-all duration-300 ${
+                      className={`absolute top-full left-0 mt-1 z-50 bg-white rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-100 py-2 ${item.name === "Institutions" ? "w-180" : "w-80"} transition-all duration-300 ${
                         activeDropdown === index
                           ? "opacity-100 visible translate-y-0"
                           : "opacity-0 invisible -translate-y-2 pointer-events-none"
@@ -270,6 +271,7 @@ const Header = () => {
                             <li key={subIndex}>
                               <a
                                 href={subItem.link}
+                                target="_blank"
                                 className="block px-5 py-3 text-gray-700 text-sm border-l-3 border-transparent hover:bg-[#0052ab]/5 hover:text-[#0052ab] hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
                               >
                                 {subItem.name}
@@ -389,6 +391,7 @@ const Header = () => {
                           <li key={subIndex}>
                             <a
                               href={subItem.link}
+                              target="_blank"
                               onClick={toggleMobileMenu}
                               className="block py-3 px-5 text-gray-600 text-sm border-l-3 border-transparent hover:text-[#0052ab] hover:bg-[#0052ab]/5 hover:border-[#0052ab] hover:pl-6 transition-all duration-300"
                             >
