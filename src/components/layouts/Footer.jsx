@@ -31,6 +31,12 @@ const Footer = () => {
     { name: "Research Programs" },
   ];
 
+  const alumniPortals = [
+    { name: "PSG Arts Alumni Association", link: "http://localhost:5173/" },
+    { name: "PSG Tech Alumni Association", link: "pstechalumni.in" },
+    { name: "PSG iTech Alumni Association", link: "psgitechalumni.in" },
+  ]
+
   return (
     <footer className="bg-gradient-to-br from-[#001a3d] to-[#003d82] text-white">
       {/* Main Footer */}
@@ -124,7 +130,7 @@ const Footer = () => {
             </div>
 
             {/* Programs */}
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               <h3 className="text-lg font-bold text-white relative pb-3">
                 Our Programs
                 <span className="absolute left-0 bottom-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-transparent"></span>
@@ -139,6 +145,31 @@ const Footer = () => {
                       />
                       {program.name}
                     </p>
+                  </li>
+                ))}
+              </ul>
+            </div> */}
+
+            {/* Alumni Portal Section */}
+            <div className="space-y-6">
+              <h3 className="text-lg font-bold text-white relative pb-3">
+                Alumni Portal Links
+                <span className="absolute left-0 bottom-0 w-12 h-0.5 bg-gradient-to-r from-yellow-400 to-transparent"></span>
+              </h3>
+              <ul className="space-y-3">
+                {alumniPortals.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-white/80 text-sm hover:text-yellow-300 hover:pl-2 transition-all duration-300 group"
+                    >
+                      <ArrowRight
+                        size={16}
+                        className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300"
+                      />
+                      {link.name}
+                    </a>
                   </li>
                 ))}
               </ul>
