@@ -7,7 +7,7 @@ import Footer from "./layouts/Footer";
 const Layout = () => {
   return (
     <>
-      <TopHeader />
+      {/* <TopHeader /> */}
       <Header />
       <main>
         <Outlet />

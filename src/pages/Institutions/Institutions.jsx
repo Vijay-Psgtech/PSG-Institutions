@@ -18,15 +18,15 @@ const InstitutionDetails = () => {
     );
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-blue-50 min-h-screen">
+    <section className="w-full bg-linear-to-b from-white to-blue-50 min-h-screen">
       {/* Hero Section */}
-      <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px] overflow-hidden">
+      <div className="relative w-full h-80 sm:h-100 md:h-112.5 overflow-hidden">
         <img
           src={institution.image}
           alt={institution.label}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/70"></div>
 
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
           {institution.logo && (
@@ -116,12 +116,12 @@ const InstitutionDetails = () => {
                 rel="noopener noreferrer"
               >
                 <motion.button
-                  className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white rounded-xl font-semibold text-sm md:text-base shadow-lg shadow-blue-900/30 overflow-hidden hover:cursor-pointer"
+                  className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-r from-[#003d82] to-[#0052ab] text-white rounded-xl font-semibold text-sm md:text-base shadow-lg shadow-blue-900/30 overflow-hidden hover:cursor-pointer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#0052ab] to-[#003d82] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-linear-to-r from-[#0052ab] to-[#003d82] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 
                   <span className="relative">Explore</span>
 

@@ -1,225 +1,364 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Calendar, GraduationCap } from "lucide-react";
-import { institutionsData } from "../../components/data/InstitutionsData.js";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { institutionsData } from "../../components/data/InstitutionsData";
 import { Link } from "react-router-dom";
 
+/* PSG Blue constants */
+const PSG_BLUE = "#3333CC";
+const PSG_BLUE_LIGHT = "#4A90E2";
+const PSG_BLUE_PALE = "#EEF2FF";
+const PSG_BLUE_DARK = "#1a1a7a";
+
+/* ── Font Loader ── */
+const FontLoader = () => {
+  useEffect(() => {
+    if (document.getElementById("institutions-fonts")) return;
+    const link = document.createElement("link");
+    link.id = "institutions-fonts";
+    link.rel = "stylesheet";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap";
+    document.head.appendChild(link);
+  }, []);
+  return null;
+};
+
+/* ── Global Styles ── */
+const GlobalStyles = () => (
+  <style id="institutions-global-style">{`
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes floatingSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes shimmerShine {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    /* PSG blue animated gradient overlay */
+    .animated-gradient-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.92) 0%,
+        rgba(238,242,255,0.85) 25%,
+        rgba(255,255,255,0.88) 50%,
+        rgba(224,231,255,0.83) 75%,
+        rgba(255,255,255,0.92) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    .floating-element { animation: floatingSlow 6s ease-in-out infinite; }
+
+    .shimmer-effect {
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+      background-size: 1000px 100%;
+      animation: shimmerShine 3s infinite;
+    }
+
+    .glassmorphic {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    /* PSG blue active category button */
+    .category-btn-active {
+      background: linear-gradient(135deg, ${PSG_BLUE_DARK} 0%, ${PSG_BLUE} 100%);
+      box-shadow: 0 8px 32px rgba(51, 51, 204, 0.3);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, ${PSG_BLUE_DARK} 0%, ${PSG_BLUE} 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(51, 51, 204, 0.08);
+      font-size: 16px;
+      margin-right: 8px;
+    }
+  `}</style>
+);
+
+/* ── Icons ── */
+const InstituionIcons = {
+  School: () => <span className="text-xl">🎓</span>,
+  College: () => <span className="text-xl">📚</span>,
+  Medical: () => <span className="text-xl">⚕️</span>,
+};
+
+/* ── Decorative Background ── */
+const DecorativeElements = () => (
+  <>
+    <motion.div
+      className="absolute -top-20 -left-20 w-60 h-60 floating-element"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 0.04, scale: 1 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+      style={{ background: `radial-gradient(circle, ${PSG_BLUE} 0%, transparent 70%)`, borderRadius: "50%", pointerEvents: "none" }}
+    />
+    <motion.div
+      className="absolute -bottom-32 -right-32 w-96 h-96 floating-element"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 0.03, scale: 1 }}
+      transition={{ delay: 0.4, duration: 0.9 }}
+      style={{ background: `radial-gradient(circle, ${PSG_BLUE} 0%, transparent 70%)`, borderRadius: "50%", pointerEvents: "none" }}
+    />
+  </>
+);
+
+/* ── Category Badge ── */
+const CategoryBadge = ({ label, isActive, onClick }) => (
+  <motion.button
+    onClick={onClick}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
+    className={`px-8 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 relative overflow-hidden group ${
+      isActive ? "category-btn-active text-white shadow-lg" : "glassmorphic text-gray-700"
+    }`}
+    style={!isActive ? {
+      "--hover-color": PSG_BLUE,
+    } : {}}
+    onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.color = PSG_BLUE; } }}
+    onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.color = ""; } }}
+  >
+    {!isActive && (
+      <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    )}
+    <span className="relative z-10">{label}</span>
+  </motion.button>
+);
+
+/* ── Main Section ── */
 const InstitutionsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Categorize institutions
   const categories = {
-    all: { name: "All Institutions", icon: "🏛️" },
-    schools: { name: "Schools", icon: "🎓" },
-    colleges: { name: "Colleges & Institutes", icon: "🏫" },
-    medical: { name: "Medical & Healthcare", icon: "⚕️" },
+    all: "All Institutions",
+    schools: "Schools",
+    colleges: "Colleges",
+    medical: "Medical",
   };
 
-  const categorizeInstitutions = () => {
-    const categorized = {
-      all: institutionsData,
-      schools: institutionsData.filter((inst) => inst.category === "School"),
-      colleges: institutionsData.filter((inst) => inst.category === "College"),
-      medical: institutionsData.filter((inst) => inst.category === "Medical"),
-    };
-    return categorized;
+  const filtered = {
+    all: institutionsData,
+    schools: institutionsData.filter((i) => i.category === "School"),
+    colleges: institutionsData.filter((i) => i.category === "College"),
+    medical: institutionsData.filter((i) => i.category === "Medical"),
   };
-
-  const categorizedInstitutions = categorizeInstitutions();
-  const displayedInstitutions = categorizedInstitutions[selectedCategory];
 
   return (
-    <section id="institutions" className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-40 -left-20 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 -right-20 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl"></div>
+    <section className="relative overflow-hidden">
+      <FontLoader />
+      <GlobalStyles />
+
+      <div className="absolute inset-0 bg-linear-to-br from-white via-blue-50 to-white" />
+      <div className="animated-gradient-overlay absolute inset-0" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <DecorativeElements />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+      {/* Subtle Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(0deg, transparent 24%, rgba(51,51,204,.05) 25%, rgba(51,51,204,.05) 26%, transparent 27%, transparent 74%, rgba(51,51,204,.05) 75%, rgba(51,51,204,.05) 76%, transparent 77%, transparent),
+            linear-gradient(90deg, transparent 24%, rgba(51,51,204,.05) 25%, rgba(51,51,204,.05) 26%, transparent 27%, transparent 74%, rgba(51,51,204,.05) 75%, rgba(51,51,204,.05) 76%, transparent 77%, transparent)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative z-10 py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-24"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-xs md:text-sm font-semibold tracking-wider text-[#0052ab] bg-blue-50 rounded-full uppercase">
-            <GraduationCap size={16} />
-            Our Network
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#003d82] via-[#0052ab] to-[#003d82] tracking-tight leading-tight mb-4">
+          <motion.div
+            className="inline-block mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="px-4 py-2 rounded-full glassmorphic">
+              <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: PSG_BLUE }}>
+                ✨ Our Educational Ecosystem
+              </span>
+            </div>
+          </motion.div>
+
+          {/* PSG Blue title */}
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl mb-4 font-bold"
+            style={{
+              fontFamily: "Playfair Display",
+              background: `linear-gradient(135deg, ${PSG_BLUE_DARK} 0%, ${PSG_BLUE} 50%, ${PSG_BLUE_DARK} 100%)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
             PSG Institutions
           </h2>
-          <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            A comprehensive network of{" "}
-            <span className="font-semibold text-[#003d82]">
-              premier institutions
-            </span>{" "}
-            dedicated to excellence in education and healthcare
+
+          <p className="mt-8 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed font-light">
+            Explore our renowned network of world-class institutions dedicated
+            to shaping the future through excellence in education, research, and
+            healthcare innovation.
           </p>
-          <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#0052ab] to-transparent rounded-full"></div>
         </motion.div>
 
-        {/* Category Filter Tabs */}
+        {/* Category Filters */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12 md:mb-16"
+          className="flex justify-center gap-3 mb-20 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {Object.keys(categories).map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`group relative px-6 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-[#003d82] to-[#0052ab] text-white shadow-lg shadow-blue-900/30"
-                  : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-[#0052ab]/30"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          {Object.keys(categories).map((key, index) => (
+            <motion.div
+              key={key}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
             >
-              <span className="flex items-center gap-2">
-                <span className="text-lg">{categories[category].icon}</span>
-                <span>{categories[category].name}</span>
-              </span>
-              {selectedCategory === category && (
-                <motion.div
-                  className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#0052ab] to-[#003d82] opacity-0"
-                  layoutId="activeCategory"
-                />
-              )}
-            </motion.button>
+              <CategoryBadge
+                label={categories[key]}
+                isActive={selectedCategory === key}
+                onClick={() => setSelectedCategory(key)}
+              />
+            </motion.div>
           ))}
         </motion.div>
 
         {/* Institutions Grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedCategory}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {displayedInstitutions.map((institution, index) => (
-              <InstitutionCard
-                key={institution.label}
-                institution={institution}
-                index={index}
-              />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div className="grid md:grid-cols-3 gap-10 lg:gap-14" layout>
+          {filtered[selectedCategory].map((inst, index) => (
+            <InstitutionCard key={inst.slug} inst={inst} index={index} />
+          ))}
+        </motion.div>
 
-        {/* Stats Section */}
+        {filtered[selectedCategory].length === 0 && (
+          <motion.div className="text-center py-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <p className="text-gray-500 text-lg">No institutions found in this category.</p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
 };
 
-// Institution Card Component
-const InstitutionCard = ({ institution, index }) => {
+/* ── Institution Card ── */
+const InstitutionCard = ({ inst, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#0052ab]/30"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -8 }}
-    >
-      {/* Image Container */}
-      <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-        <motion.img
-          src={institution.image}
-          alt={institution.label}
-          className="w-full h-full object-cover"
-          loading="lazy"
-          animate={{
-            scale: isHovered ? 1.1 : 1,
-          }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-        {/* Gradient Overlay */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-[#003d82]/80 via-[#003d82]/40 to-transparent"
-          animate={{
-            opacity: isHovered ? 0.7 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-        />
-
-        {/* Establishment Year Badge */}
-        <motion.div
-          className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full shadow-lg"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.05 + 0.2 }}
-        >
-          <Calendar size={14} className="text-[#0052ab]" />
-          <span className="text-xs font-bold text-gray-800">
-            Est. {institution.establishment}
-          </span>
-        </motion.div>
-
-        {/* Hover Link Icon */}
-        <motion.div
-          className="absolute top-4 left-4"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            scale: isHovered ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          <Link to={`institutions/${institution.slug}`}>
-            <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-              <ExternalLink size={18} className="text-[#003d82]" />
-            </div>
-          </Link>
-        </motion.div>
-      </div>
-
-      {/* Content */}
-      <div className="p-5 md:p-6">
-        <h3 className="text-base md:text-lg font-bold text-gray-900 leading-snug mb-3 line-clamp-2 group-hover:text-[#0052ab] transition-colors duration-300">
-          {institution.label}
-        </h3>
-
-        {/* Visit Button */}
-        <a
-          href={institution.webLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0052ab] hover:text-[#003d82] transition-colors duration-300 group/link"
-        >
-          <span>Visit Website</span>
-          <ExternalLink
-            size={16}
-            className="group-hover/link:translate-x-1 transition-transform duration-300"
-          />
-        </a>
-      </div>
-
-      {/* Bottom Accent Line */}
+    <Link to={`/institutions/${inst.slug}`} className="group">
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#003d82] via-[#0052ab] to-[#003d82]"
-        initial={{ scaleX: 0 }}
-        animate={{
-          scaleX: isHovered ? 1 : 0,
-        }}
-        transition={{ duration: 0.4 }}
-      />
-    </motion.div>
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.12, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        className="relative h-105 rounded-3xl overflow-hidden cursor-pointer"
+      >
+        <div className="absolute inset-0 rounded-3xl border border-white/30 shadow-2xl" />
+
+        <div className="relative w-full h-full overflow-hidden bg-gray-900">
+          <img
+            src={inst.image}
+            alt={inst.label}
+            className="w-full h-full object-cover transition-transform duration-700 ease-out"
+            style={{ transform: isHovered ? "scale(1.12) rotate(1deg)" : "scale(1) rotate(0deg)" }}
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/60 to-black/30" />
+
+          {isHovered && (
+            <motion.div
+              className="absolute inset-0 pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.12 }}
+              style={{ background: "radial-gradient(circle at 30% 30%, rgba(74,144,226,0.25) 0%, transparent 50%)" }}
+            />
+          )}
+        </div>
+
+        <div className="absolute inset-0 p-10 flex flex-col justify-between">
+          {/* Category badge — PSG blue */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0.7, y: -10 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 w-fit">
+              <span className="text-white/90 text-sm font-semibold tracking-wider">{inst.category}</span>
+            </div>
+          </motion.div>
+
+          {/* Title & CTA */}
+          <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }}>
+            <motion.div
+              className="mb-6 relative"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.12 + 0.2 }}
+            >
+              <h3 className="text-4xl lg:text-5xl font-bold leading-tight text-white mb-3" style={{ fontFamily: "Playfair Display" }}>
+                {inst.label}
+              </h3>
+              {/* PSG blue accent line */}
+              <div className="w-16 h-1 rounded-full" style={{ background: "linear-gradient(to right, #4A90E2, #7EB3FF)" }} />
+            </motion.div>
+
+            <p className="text-gray-200 text-sm leading-relaxed mb-6 font-light max-w-xs">
+              {inst.tagline || "Delivering excellence in education, innovation and community service."}
+            </p>
+
+            {/* CTA — PSG blue */}
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={isHovered ? { opacity: 1, x: 0 } : { opacity: 0.6, x: -10 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide"
+            >
+              <span style={{ color: "#7EB3FF" }} className="group-hover:opacity-90 transition-opacity">
+                Explore Details
+              </span>
+              <motion.span
+                animate={isHovered ? { x: 4 } : { x: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ color: "#7EB3FF" }}
+              >
+                →
+              </motion.span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.div>
+    </Link>
   );
 };
 
