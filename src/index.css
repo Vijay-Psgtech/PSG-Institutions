@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
