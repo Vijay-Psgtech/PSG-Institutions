@@ -119,9 +119,9 @@ const Header = () => {
         { name: "PSG iTech Alumni Association", link: "/psgtechalumni.in" },
       ],
     },
-    { name: "Events", link: "/events" },
-    { name: "Achievements", link: "/achievements" },
-    { name: "Placements", link: "/placements" },
+    // { name: "Events", link: "/events" },
+    // { name: "Achievements", link: "/achievements" },
+    // { name: "Placements", link: "/placements" },
     { name: "Contact", link: "/contact" },
   ];
 
@@ -176,7 +176,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center">
-            <ul className="flex gap-1">
+            <ul className="flex gap-8">
               {menuItems.map((item, index) => (
                 <li
                   key={index}
