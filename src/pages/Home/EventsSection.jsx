@@ -18,12 +18,12 @@ const EventsSection = () => {
   };
 
   return (
-    <section id="events" className="relative py-16 md:py-20 lg:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section id="events" className="relative py-16 md:py-20 lg:py-28 bg-linear-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
       {/* Background Decorative Elements - PSG Brand Colors */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-0 w-96 h-96 bg-[#003d82]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#0052ab]/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0052ab]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#0052ab]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,14 +39,14 @@ const EventsSection = () => {
             <Calendar size={16} />
             Upcoming Events
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#003d82] via-[#0052ab] to-[#003d82] tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#003d82] via-[#0052ab] to-[#003d82] tracking-tight leading-tight mb-4">
             Events & Workshops
           </h2>
           <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
             Join us for exciting learning opportunities, networking events, and
             skill-building workshops
           </p>
-          <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#0052ab] to-transparent rounded-full"></div>
+          <div className="mt-4 mx-auto w-24 h-1 bg-linear-to-r from-transparent via-[#0052ab] to-transparent rounded-full"></div>
         </motion.div>
 
         {/* Events Grid */}
@@ -90,7 +90,7 @@ const EventCard = ({
     >
       {/* Gradient Background Overlay */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${event.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+        className={`absolute inset-0 bg-linear-to-br ${event.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
       ></div>
 
       {/* Spotlight Effect */}
@@ -104,14 +104,14 @@ const EventCard = ({
       />
 
       {/* Top Accent Bar */}
-      <div className={`h-1.5 bg-gradient-to-r ${event.color}`}></div>
+      <div className={`h-1.5 bg-linear-to-r ${event.color}`}></div>
 
       <div className="relative p-6 md:p-8">
         {/* Header - Logo Only */}
         <div className="flex items-start justify-between mb-6">
           {/* Logo */}
           <motion.div
-            className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-md border border-gray-100 p-2 flex items-center justify-center overflow-hidden"
+            className="shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white shadow-md border border-gray-100 p-2 flex items-center justify-center overflow-hidden"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ duration: 0.3 }}
           >
@@ -134,14 +134,14 @@ const EventCard = ({
           <div className="flex items-center gap-2.5 text-sm md:text-base text-gray-600">
             <Calendar
               size={18}
-              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text `}
+              className={`shrink-0 bg-linear-to-r ${event.color} bg-clip-text `}
             />
             <span className="font-medium">{formatDate(event.date)}</span>
           </div>
           <div className="flex items-center gap-2.5 text-sm md:text-base text-gray-600">
             <MapPin
               size={18}
-              className={`flex-shrink-0 bg-gradient-to-r ${event.color} bg-clip-text`}
+              className={`shrink-0 bg-linear-to-r ${event.color} bg-clip-text`}
             />
             <span className="line-clamp-1">{event.institute}</span>
           </div>
@@ -155,7 +155,7 @@ const EventCard = ({
 
       {/* Bottom Shine Effect */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
+        className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white to-transparent"
         animate={{
           opacity: isHovered ? 1 : 0,
         }}
