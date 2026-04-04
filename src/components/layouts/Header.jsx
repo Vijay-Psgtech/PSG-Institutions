@@ -68,7 +68,7 @@ const Header = () => {
     {
       name: "Alumni",
       subItems: [
-        { name: "PSG Arts Alumni Association", link: "http://localhost:5173/" },
+        { name: "PSG Arts Alumni Association", link: "https://alumnitest.psgcas.psginstitutions.in/" },
         { name: "PSG Tech Alumni Association", link: "*" },
         { name: "PSG IMSR Alumni Association", link: "*" },
         { name: "PSG Sarvajana Alumni Association", link: "*" },
