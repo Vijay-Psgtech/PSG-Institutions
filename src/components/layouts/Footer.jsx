@@ -24,8 +24,9 @@ const Footer = () => {
 
   const alumniPortals = [
     { name: "PSG Arts Alumni Association", link: "http://localhost:5173/" },
-    { name: "PSG Tech Alumni Association", link: "pstechalumni.in" },
-    { name: "PSG iTech Alumni Association", link: "psgitechalumni.in" },
+    { name: "PSG Tech Alumni Association", link: "*" },
+    { name: "PSG IMSR Alumni Association", link: "*" },
+    { name: "PSG Sarvajana Alumni Association", link: "*" },
   ];
 
   const socialLinks = [
