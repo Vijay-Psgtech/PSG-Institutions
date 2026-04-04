@@ -163,7 +163,7 @@ const InstitutionsSection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section id="institutions" className="relative overflow-hidden">
       <FontLoader />
       <GlobalStyles />
 
