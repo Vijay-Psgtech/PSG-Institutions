@@ -6,75 +6,7 @@ import { ChevronLeft, ChevronRight, GraduationCap, Quote, Star, Filter } from "l
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-const alumniDataAdvanced = [
-  {
-    id: 1,
-    name: "Rajesh Kumar",
-    inst: "Technology Industry Leader",
-    category: "Technology",
-    quote:
-      "The education I received here transformed my career path. The mentorship and support provided exceptional foundation for my success in the tech industry.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=RK",
-    rating: 5,
-    year: "2015",
-  },
-  {
-    id: 2,
-    name: "Priya Sharma",
-    inst: "Healthcare Professional",
-    category: "Healthcare",
-    quote:
-      "This institution's commitment to excellence is unmatched. I'm proud to carry forward the values and knowledge gained here throughout my medical practice.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=PS",
-    rating: 5,
-    year: "2016",
-  },
-  {
-    id: 3,
-    name: "Amit Patel",
-    inst: "Business Entrepreneur",
-    category: "Business",
-    quote:
-      "The diverse learning environment and world-class faculty prepared me not just for a career, but for life. Forever grateful for this transformative experience.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=AP",
-    rating: 4,
-    year: "2017",
-  },
-  {
-    id: 4,
-    name: "Sneha Gupta",
-    inst: "Research Scientist",
-    category: "Research",
-    quote:
-      "The research opportunities and academic rigor here have been instrumental in shaping my scientific career. This is truly an institution of excellence.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=SG",
-    rating: 5,
-    year: "2014",
-  },
-  {
-    id: 5,
-    name: "Vikram Singh",
-    inst: "Corporate Executive",
-    category: "Business",
-    quote:
-      "The values of integrity and excellence instilled here continue to guide my professional decisions. A truly remarkable institution.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=VS",
-    rating: 5,
-    year: "2013",
-  },
-  {
-    id: 6,
-    name: "Anjali Desai",
-    inst: "Education Administrator",
-    category: "Education",
-    quote:
-      "Being part of this community has been a privilege. The experience continues to enrich my life and work in meaningful ways.",
-    image: "https://via.placeholder.com/100/3333CC/FFFFFF?text=AD",
-    rating: 4,
-    year: "2015",
-  },
-];
+import { alumniData } from "../../components/data/AluminiData";
 
 /* PSG Blue color constants */
 const PSG_BLUE = "#3333CC";
@@ -97,15 +29,6 @@ const StarRating = ({ rating, size = 16 }) => (
 );
 
 const AlumniTestimonialsAdvanced = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", ...new Set(alumniDataAdvanced.map((alum) => alum.category))];
-
-  const filteredData = useMemo(() => {
-    return selectedCategory === "All"
-      ? alumniDataAdvanced
-      : alumniDataAdvanced.filter((alum) => alum.category === selectedCategory);
-  }, [selectedCategory]);
 
   return (
     <section className="py-20 bg-linear-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
@@ -170,28 +93,6 @@ const AlumniTestimonialsAdvanced = () => {
           <div className="mt-8 mx-auto w-32 h-1.5 psg-accent-bar rounded-full"></div>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <Filter size={20} style={{ color: PSG_BLUE }} />
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`category-btn-alumni px-6 py-2 rounded-full font-semibold text-sm sans-serif-text bg-white text-gray-700 ${
-                selectedCategory === category ? "active" : ""
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Results Count */}
         <motion.p
           className="text-center text-gray-600 text-sm mb-8 sans-serif-text"
@@ -199,7 +100,7 @@ const AlumniTestimonialsAdvanced = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Showing {filteredData.length} testimonial{filteredData.length !== 1 ? "s" : ""}
+          Showing {alumniData.length} testimonial{alumniData.length !== 1 ? "s" : ""}
         </motion.p>
 
         {/* Swiper */}
@@ -224,7 +125,7 @@ const AlumniTestimonialsAdvanced = () => {
             <ChevronRight size={24} />
           </button>
 
-          {filteredData.length > 0 ? (
+          {alumniData.length > 0 ? (
             <Swiper
               modules={[Navigation, Autoplay, Pagination]}
               navigation={{
@@ -233,7 +134,7 @@ const AlumniTestimonialsAdvanced = () => {
               }}
               pagination={{ clickable: true, dynamicBullets: true }}
               autoplay={{ delay: 4500, disableOnInteraction: false }}
-              loop={filteredData.length > 1}
+              loop={alumniData.length > 1}
               spaceBetween={30}
               slidesPerView={1}
               breakpoints={{
@@ -243,7 +144,7 @@ const AlumniTestimonialsAdvanced = () => {
               }}
               className="pb-16 px-4"
             >
-              {filteredData.map((alum) => (
+              {alumniData.map((alum) => (
                 <SwiperSlide key={alum.id}>
                   <motion.div
                     className="alumni-card-border relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 h-full flex flex-col justify-between text-center transition-all duration-500 hover:-translate-y-3"
@@ -255,16 +156,6 @@ const AlumniTestimonialsAdvanced = () => {
                     {/* Quote Icon — PSG blue */}
                     <div className="absolute top-6 right-6" style={{ color: `${PSG_BLUE}18` }}>
                       <Quote size={48} strokeWidth={1.5} />
-                    </div>
-
-                    {/* Image */}
-                    <div className="mb-4">
-                      <img
-                        src={alum.image}
-                        alt={alum.name}
-                        className="w-20 h-20 rounded-full mx-auto object-cover"
-                        style={{ border: `4px solid ${PSG_BLUE_PALE}` }}
-                      />
                     </div>
 
                     {/* Rating */}
@@ -282,11 +173,6 @@ const AlumniTestimonialsAdvanced = () => {
                     {/* Divider — PSG blue */}
                     <div className="w-12 h-1 psg-accent-bar rounded-full mx-auto mb-6"></div>
 
-                    {/* Year */}
-                    <p className="text-xs font-semibold mb-2 sans-serif-text" style={{ color: PSG_BLUE }}>
-                      Class of {alum.year}
-                    </p>
-
                     {/* Name & Title */}
                     <div>
                       <h3 className="serif-heading text-lg sm:text-xl mb-1" style={{ color: PSG_BLUE_DARK }}>
@@ -295,12 +181,6 @@ const AlumniTestimonialsAdvanced = () => {
                       <p className="text-xs sm:text-sm font-semibold tracking-wide uppercase sans-serif-text" style={{ color: PSG_BLUE }}>
                         {alum.inst}
                       </p>
-                      <span
-                        className="inline-block mt-2 px-3 py-1 text-xs font-medium rounded-full sans-serif-text"
-                        style={{ color: PSG_BLUE_TEXT, background: PSG_BLUE_PALE }}
-                      >
-                        {alum.category}
-                      </span>
                     </div>
                   </motion.div>
                 </SwiperSlide>
