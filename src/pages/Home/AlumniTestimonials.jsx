@@ -31,7 +31,7 @@ const StarRating = ({ rating, size = 16 }) => (
 const AlumniTestimonialsAdvanced = () => {
 
   return (
-    <section className="py-20 bg-linear-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
+    <section id="testimonials" className="py-20 bg-linear-to-b from-gray-50 via-white to-gray-50 overflow-hidden relative">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
         

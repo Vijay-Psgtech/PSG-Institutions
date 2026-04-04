@@ -17,9 +17,7 @@ const Footer = () => {
     { name: "Home", link: "#home" },
     { name: "About Us", link: "#about" },
     { name: "Institutions", link: "#institutions" },
-    { name: "Events", link: "#events" },
     { name: "Testimonials", link: "#testimonials" },
-    { name: "Placements", link: "#placements" },
   ];
 
   const alumniPortals = [

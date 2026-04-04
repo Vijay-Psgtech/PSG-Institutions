@@ -26,7 +26,7 @@ const trustees = [
     image: trusteeImg,
   },
   {
-    name: "Dr. R. Soundararajan",
+    name: "L. Gopalakrishnan",
     title: "Chairman, PSG Group",
     quote:
       "Our legacy is built on the belief that education is the greatest equaliser. For nearly a century, PSG has remained steadfast in its mission — to open doors of opportunity for every deserving student, irrespective of background, and to produce graduates who are not just skilled, but truly humane.",
