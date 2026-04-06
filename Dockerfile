@@ -17,5 +17,5 @@ FROM nginx:alpine
 # Copy build output
 COPY --from=build /app/dist /usr/share/nginx/html/PSG-Institutions
 
-EXPOSE 8082
+EXPOSE 8777
 CMD ["nginx", "-g", "daemon off;"]
